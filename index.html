@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICECI 2026 – Aligarh, India | 4-5 April 2026</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Top IEEE Bar -->
+    <div class="top-bar">
+      <div class="container top-links">
+        <a href="https://www.ieee.org/">IEEE.org</a>
+        |
+        <a href="https://ieeexplore.ieee.org/Xplore/home.jsp">
+          IEEE Xplore Digital Library
+        </a>
+        |
+        <a href="https://standards.ieee.org/">IEEE Standards</a>
+        |
+        <a href="https://spectrum.ieee.org/">IEEE Spectrum</a>
+        |
+        <a href="https://www.ieee.org/sitemap.html">More sites</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+      <div class="container header-top">
+        <div class="logo-area">
+          <span class="conference-number">
+            2
+            <sup>nd</sup>
+          </span>
+          <img class="skyline" src="images/logo2.jpeg" alt="logo" />
+          <div>
+            <div class="conference-title">
+              <span class="icecie">ICECI</span>
+              <span class="year">2026</span>
+            </div>
+            <div class="conference-date">4-5 April 2026 | Aligarh, India</div>
+          </div>
+        </div>
+        <div class="right-icons">
+          <div class="search-container">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search ICECI'2026"
+            />
+            <button class="search-btn" aria-label="Search">
+              <img
+                src="https://img.icons8.com/ios-glyphs/20/00629B/search--v1.png"
+                alt="Search"
+                class="search-icon"
+              />
+            </button>
+          </div>
+          <div class="divider"></div>
+          <a href="https://www.ieee.org" target="_blank">
+            <img src="images/ieeeUP.png" alt="IEEE Logo" class="ieee-logo" />
+          </a>
+          <div class="divider"></div>
+          <a href="https://www.amu.ac.in" target="_blank">
+            <img src="images/logoAMU.png" alt="IEEE Logo" class="ieee-logo" />
+          </a>
+        </div>
+      </div>
+      <nav class="menu-bar">
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li>
+            <a href="https://amu.ac.in/miscellaneous/iceci-2023">
+              ICECI 2023
+            </a>
+          </li>
+          <li><a href="index.html#COMMITTEE">COMMITTEE</a></li>
+          <li><a href="authors.html">AUTHORS</a></li>
+          <li><a href="registration.html">REGISTRATION</a></li>
+          <li><a href="index.html#venue">VENUE/TRAVEL</a></li>
+          <li><a href="index.html#contact">CONTACT US</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Slider with Thumbnails -->
+    <section class="hero-section">
+      <div class="container slider-container">
+        <div class="slider">
+          <!-- Slide 1 -->
+          <div class="slide active">
+            <img src="images/header.jpg" alt="Conference Venue" />
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h1>
+                  2nd International Conference on Emerging Computational
+                  Intelligence
+                </h1>
+                <h2>ICECI 2026</h2>
+                <h3>
+                  India
+                  <span class="city-script">Aligarh</span>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="slide">
+            <img src="images/header2.jpg" alt="Conference Highlights" />
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h1>
+                  Call for Papers - Explore Cutting-Edge Research in AI and IoT
+                </h1>
+                <h2>ICECI 2026</h2>
+                <h3>
+                  Submit Before
+                  <span class="city-script">Feb 28, 2026</span>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="slide">
+            <img src="images/header.jpg" alt="Conference Networking" />
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h1>Network With Leading Experts & Researchers</h1>
+                <h2>ICECI 2026</h2>
+                <h3>
+                  Opportunities in
+                  <span class="city-script">AI, IoT, and ML</span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-thumbnails"></div>
+      </div>
+    </section>
+
+    <!-- Countdown -->
+    <section class="countdown-section">
+      <div class="container countdown-timer">
+        <div class="timer-item">
+          <div class="timer-circle" id="days-circle">
+            <div class="timer-inner">
+              <div class="timer-number" id="days">0</div>
+              <div class="timer-label">DAYS</div>
+            </div>
+          </div>
+        </div>
+        <div class="timer-item">
+          <div class="timer-circle" id="hours-circle">
+            <div class="timer-inner">
+              <div class="timer-number" id="hours">0</div>
+              <div class="timer-label">HOURS</div>
+            </div>
+          </div>
+        </div>
+        <div class="timer-item">
+          <div class="timer-circle" id="minutes-circle">
+            <div class="timer-inner">
+              <div class="timer-number" id="minutes">0</div>
+              <div class="timer-label">MINUTES</div>
+            </div>
+          </div>
+        </div>
+        <div class="timer-item">
+          <div class="timer-circle" id="seconds-circle">
+            <div class="timer-inner">
+              <div class="timer-number" id="seconds">0</div>
+              <div class="timer-label">SECONDS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conference Description & Sidebar -->
+    <section class="conference-description">
+      <div class="container content-wrapper">
+        <div class="main-content-area">
+          <p>
+            The purpose of the 2nd IEEE International Conference on Electrical,
+            Control and Instrumentation engineering (IEEE ICECIE’2025) is to
+            bring together researchers, engineers and practitioners interested
+            on Control and Systems , Energy and Environment , Industrial
+            Informatics and Computational Intelligence and other aspects of
+            control systems and electrical engineering.
+          </p>
+
+          <h2 class="highlight-heading yellow" id="CONFERENCE-AREAS">
+            CONFERENCE AREAS
+          </h2>
+
+          <div class="tracks">
+            <div class="track">
+              <div class="track-number">TRACK 1</div>
+              <div class="track-content">
+                Artificial Intelligence, Machine Learning & Deep Learning
+                (Neural Networks, Reinforcement Learning, Transfer Learning)
+              </div>
+            </div>
+
+            <div class="track">
+              <div class="track-number">TRACK 2</div>
+              <div class="track-content">
+                Natural Language Processing & Speech Technologies (LLMs,
+                Conversational Agents, Multilingual NLP)
+              </div>
+            </div>
+
+            <div class="track">
+              <div class="track-number">TRACK 3</div>
+              <div class="track-content">
+                Data Science & Big Data Analytics (Predictive Modeling, Data
+                Mining, Visualization Techniques)
+              </div>
+            </div>
+
+            <div class="track">
+              <div class="track-number">TRACK 4</div>
+              <div class="track-content">
+                Cyber Security, Blockchain & Digital Forensics (Secure
+                Protocols, Threat Intelligence, Privacy Preserving Techniques)
+              </div>
+            </div>
+
+            <div class="track">
+              <div class="track-number">TRACK 5</div>
+              <div class="track-content">
+                Internet of Things (IoT) & Edge Computing (Smart Cities,
+                Wearable Devices, Sensor Networks)
+              </div>
+            </div>
+
+            <div class="track">
+              <div class="track-number">TRACK 6</div>
+              <div class="track-content">
+                Cloud Computing & High-Performance Computing (Virtualization,
+                Resource Optimization, Green Computing)
+              </div>
+            </div>
+
+            <div class="track">
+              <div class="track-number">TRACK 7</div>
+              <div class="track-content">
+                Software Engineering & Agile Practices (DevOps, Software
+                Testing, Requirement Engineering)
+              </div>
+            </div>
+
+            <div class="track">
+              <div class="track-number">TRACK 8</div>
+              <div class="track-content">
+                Human-Computer Interaction & Virtual Reality (AR/VR Interfaces,
+                User Experience, Assistive Technologies)
+              </div>
+            </div>
+
+            <div class="track">
+              <div class="track-number">TRACK 9</div>
+              <div class="track-content">
+                Computational Intelligence & Bio-Inspired Algorithms (Swarm
+                Intelligence, Evolutionary Computation, Fuzzy Systems)
+              </div>
+            </div>
+
+            <div class="track">
+              <div class="track-number">TRACK 10</div>
+              <div class="track-content">
+                Educational Technologies & E-Learning (Adaptive Learning
+                Systems, Gamification, MOOCs)
+              </div>
+            </div>
+          </div>
+
+          <h2 class="highlight-heading yellow">KEYNOTE SPEAKERS:</h2>
+          <ol class="keynote-speakers">
+            <li>Prof. John Doe, University of Oxford, UK</li>
+            <li>Dr. Jane Smith, MIT, USA</li>
+          </ol>
+
+          <h2 class="highlight-heading yellow" id="COMMITTEE">
+            PROGRAM AND TECHNICAL COMMITTEE
+          </h2>
+
+          <table class="committee-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Grade</th>
+                <th>Role in the Conference</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Arman Rasool Faridi</td>
+                <td>Professor</td>
+                <td>General Chair</td>
+              </tr>
+              <tr>
+                <td>Aasim Zafar</td>
+                <td>Professor</td>
+                <td>Conference Chair</td>
+              </tr>
+              <tr>
+                <td>Mohammad Rihan</td>
+                <td>Professor</td>
+                <td>General Co-Chair</td>
+              </tr>
+              <tr>
+                <td>Ekram Khan</td>
+                <td>Professor</td>
+                <td>Conference Co-Chair</td>
+              </tr>
+              <tr>
+                <td>Rashid Ali</td>
+                <td>Professor</td>
+                <td>Publication Committee Chair</td>
+              </tr>
+              <tr>
+                <td>M M Sufyan Beg</td>
+                <td>Professor</td>
+                <td>Publicity Chair</td>
+              </tr>
+              <tr>
+                <td>Yusuf Khan</td>
+                <td>Professor</td>
+                <td>Venue Management Committee Chair</td>
+              </tr>
+              <tr>
+                <td>Asfar Ali Khan</td>
+                <td>Professor</td>
+                <td>Local Hospitality Chair</td>
+              </tr>
+              <tr>
+                <td>Omar Farooq</td>
+                <td>Professor</td>
+                <td>Track Chair</td>
+              </tr>
+              <tr>
+                <td>Asif Irshad Khan</td>
+                <td>Associate Professor</td>
+                <td>TPC Chair</td>
+              </tr>
+              <tr>
+                <td>Arshad Iqbal</td>
+                <td>Assistant Professor</td>
+                <td>Finance Committee Chair</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sidebar">
+          <div class="sidebar-section">
+            <h3>IMPORTANT LINKS</h3>
+            <a href="#" class="btn-primary">SUBMIT YOUR PAPER</a>
+            <a href="authors.html" class="btn-primary">CALL FOR PAPERS</a>
+            <a href="registration.html" class="btn-primary">REGISTRATION</a>
+          </div>
+          <div class="sidebar-section">
+            <h3>IMPORTANT DATES</h3>
+            <div class="important-dates">
+              <strong>Paper Submission:</strong>
+              <br />
+              Feb 28, 2026 [Extended]
+              <br />
+              <br />
+              <strong>Camera Ready:</strong>
+              <br />
+              Mar 25, 2026
+            </div>
+          </div>
+          <div class="sidebar-section">
+            <h3>PUBLICATION</h3>
+            <div class="publication-links">
+              <a href="https://ieeexplore.ieee.org/Xplore/home.jsp">
+                IEEE Xplore Digital Library
+              </a>
+              <a href="https://www.scopus.com/pages/home#basic">Scopus</a>
+            </div>
+          </div>
+          <div class="sidebar-section">
+            <h3>SPONSORS</h3>
+            <div class="sponsors">
+              <img src="images/scopus.png" alt="Scopus" />
+              <img src="images/ieeeUP.png" alt="IEEE Xplore" />
+              <img src="images/IEEE_Xplore.jpg" alt="IEEE Xplore" />
+            </div>
+          </div>
+          <div class="sidebar-section" id="contact">
+            <h3>CONTACT US</h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <strong>General Info:</strong>
+                <br />
+                conference.cs@amu.ac.in
+              </div>
+              <div class="contact-item">
+                <strong>General Chair:</strong>
+                <br />
+                chair2026iceci@amu.ac.in
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue -->
+    <section class="venue-section" id="venue">
+      <div class="container">
+        <h2>VENUE</h2>
+        <p>
+          The conference will be held at the
+          <strong>
+            Department of Computer Science, Aligarh Muslim University (AMU),
+            Aligarh, India
+          </strong>
+          — an institution of national importance (Seventh Schedule, Article 246
+          of the Indian Constitution).
+          <br />
+          <br />
+          <strong>About AMU:</strong>
+          AMU is a premier academic institution, accredited by
+          <strong>NAAC with an “A+” Grade (CGPA 3.35)</strong>
+          and consistently ranked among India’s top universities. It secured
+          <strong>#3 in India Today’s 2023 University Rankings</strong>
+          , is placed among the
+          <strong>Top 10 in NIRF 2021</strong>
+          , and is featured in the
+          <strong>ARWU (Shanghai Rankings)</strong>
+          and
+          <strong>Times Higher Education World Rankings</strong>
+          for its excellence in
+          <em>Life Sciences</em>
+          and
+          <em>Physical Sciences</em>
+          .
+          <br />
+          <br />
+          <strong>About the Department of Computer Science:</strong>
+          Established in
+          <strong>1971</strong>
+          with the IBM1130 system, the department is one of India’s oldest and
+          most pioneering in Computer Science and IT education. It became an
+          independent department in 1988 and has consistently introduced
+          cutting-edge programs, including
+          <strong>
+            Ph.D., MCA, M.Sc. in Cyber Security & Digital Forensics
+          </strong>
+          , and
+          <strong>B.Sc. (Hons.) in Computer Science & Applications</strong>
+          . Recognized by
+          <strong>Times Higher Education, India Today, and NIRF</strong>
+          , the department is equipped with state-of-the-art labs, smart
+          classrooms, and modern infrastructure.
+          <br />
+          <br />
+          Graduates from the department are highly sought after by leading IT
+          firms like
+          <strong>TCS, IBM, Wipro, Infosys</strong>
+          , and
+          <strong>Accenture</strong>
+          , with many securing placements before completing their final
+          semester. Its strong academic and research ecosystem makes it a center
+          of excellence in Computer Science education in India.
+        </p>
+
+        <div class="venue-images">
+          <img src="images/tajmahal.jpeg" alt="Venue" />
+          <img
+            src="images/Strachey_hall_in_Aligarh_Muslim_University.jpg"
+            alt="Venue"
+          />
+          <img src="images/dept_CS.jpg" alt="Venue" />
+        </div>
+        <a href="https://www.amu.ac.in/" class="read-more-btn">READ MORE</a>
+      </div>
+    </section>
+
+    <!-- Plagiarism -->
+    <section class="plagiarism-section">
+      <div class="container">
+        <h2>PLAGIARISM</h2>
+        <p>
+          Please note that all manuscripts submitted to the ICECI will be
+          checked for plagiarism using turitin. Should the submitted paper
+          contains a high level of similarity to previously published works, the
+          manuscript will be withdrawn from the conference.
+        </p>
+        <p>
+          In addition, the authors will be checked if they have been prohibited
+          from publishing with any or all IEEE publications using The IEEE
+          Prohibited Authors List (PAL) database.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Join Us -->
+    <section class="why-join-section">
+      <div class="container">
+        <h2 class="highlight-heading yellow" id="WHY-JOIN-US">
+          WHY JOIN US?
+        </h2>
+
+        <div class="reasons">
+          <div class="reason">
+            <h3>1. Cutting-Edge Research</h3>
+            <p>
+              Gain insights into the latest advancements in Artificial
+              Intelligence, Machine Learning, IoT, Cyber Security, and other
+              emerging areas of Computer Science.
+            </p>
+          </div>
+
+          <div class="reason">
+            <h3>2. Networking Opportunities</h3>
+            <p>
+              Interact with leading researchers, academicians, and industry
+              experts from across the globe to establish collaborations and
+              research partnerships.
+            </p>
+          </div>
+
+          <div class="reason">
+            <h3>3. Meet Renowned Keynote Speakers</h3>
+            <p>
+              Learn directly from distinguished scientists and technology
+              leaders who are shaping the future of computing and digital
+              transformation.
+            </p>
+          </div>
+
+          <div class="reason">
+            <h3>4. Professional Growth</h3>
+            <p>
+              Participate in technical workshops and panel discussions to
+              enhance your technical skills, broaden your knowledge, and stay
+              updated with industry trends.
+            </p>
+          </div>
+
+          <div class="reason">
+            <h3>5. Industry-Academia Connect</h3>
+            <p>
+              Explore potential collaborations with top IT firms, startups, and
+              research labs. Present your work to attract investment, project
+              funding, or joint research opportunities.
+            </p>
+          </div>
+
+          <div class="reason">
+            <h3>6. Publication & Recognition</h3>
+            <p>
+              All accepted and presented papers will be published in the
+              <strong>IEEE Xplore Digital Library</strong>
+              and indexed in
+              <strong>Scopus</strong>
+              , enhancing your academic visibility.
+            </p>
+          </div>
+
+          <div class="reason">
+            <h3>7. Exposure to Emerging Technologies</h3>
+            <p>
+              Discover live demonstrations and exhibits on AI-driven solutions,
+              Blockchain, Smart Devices, and Augmented Reality applications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-links">
+        <a href="index.html">HOME</a>
+        |
+        <a href="https://www.amu.ac.in/" target="_blank">AMU Website</a>
+        |
+        <a
+          href="https://www.amu.ac.in/department/computer-science"
+          target="_blank"
+        >
+          Department of Computer Science
+        </a>
+        |
+        <a href="https://amu.ac.in/miscellaneous/iceci-2023" target="_blank">
+          ICECI 2023
+        </a>
+        |
+        <a href="https://privacy.ieee.org/policies" target="_blank">
+          IEEE PRIVACY POLICY
+        </a>
+      </div>
+      <div class="footer-text">
+        <p>© Copyright 2026 ICECI - All rights reserved.</p>
+      </div>
+      <a href="#" class="back-to-top">▲ Back to Top</a>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
+</html>
