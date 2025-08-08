@@ -1,3 +1,4 @@
+
 // DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
   initSlider()

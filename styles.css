@@ -17,6 +17,12 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
+body, .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
 
 /* ======================
    TOP IEEE BAR
@@ -825,4 +831,167 @@ body {
 
 .committee-table tr:nth-child(even) {
   background: #fafafa;
+}
+.keynote-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  justify-content: flex-start;
+}
+
+.keynote-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(30, 136, 229, 0.10);
+  width: 280px;
+  padding: 24px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s;
+}
+
+.keynote-card:hover {
+  box-shadow: 0 8px 32px rgba(30, 136, 229, 0.16);
+}
+
+.keynote-card img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border: 3px solid #1e88e5;
+  background: #f6f6f6;
+}
+
+.keynote-info {
+  text-align: center;
+}
+
+.keynote-info h3 {
+  margin: 0 0 10px 0;
+  color: #1e88e5;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.keynote-info p {
+  margin: 0;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .keynote-cards {
+    gap: 16px;
+    justify-content: center;
+  }
+  .keynote-card {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
+.offline-marquee {
+  width: 100%;
+  background: #ffeaea;
+  color: #c00;
+  border: 2px solid #c00;
+  padding: 12px 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0 10px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.offline-marquee span {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 9s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.cmt-acknowledgment {
+  background: #f3f6fa;
+  color: #222;
+  font-size: 14px;
+  border-top: 1px solid #e0e4ea;
+  padding: 18px 20px 10px 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.cmt-acknowledgment strong {
+  color: #1e88e5;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+html, body {
+    overflow-x: hidden;
+}
+.keynote-cards, .venue-images, .reasons {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+@media (max-width: 600px) {
+    .keynote-card, .venue-images img {
+        width: 100% !important;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 900px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    .logo-section {
+        width: 100%;
+        justify-content: center;
+    }
+    .menu-toggle, .search-section {
+        margin-top: 10px;
+    }
+    .main-content-area, .sidebar {
+        width: 100%;
+    }
+    .content-wrapper {
+        display: block;
+        width: 100%;
+    }
+    .keynote-cards {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+    .keynote-card {
+        width: 95%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    .slide-content h2 { font-size: 22px; }
+    .slide-content h3 { font-size: 16px; }
+    .venue-images { flex-direction: column; }
+    .venue-images img { width: 100%; max-width: 320px; }
+    .offline-marquee { font-size: 14px; padding: 10px 0; }
+    .footer-text, .footer-links { font-size: 12px; }
 }
