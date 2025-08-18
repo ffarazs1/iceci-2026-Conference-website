@@ -564,7 +564,7 @@ body, .container {
 .venue-images img {
   width: 350px;
   height: 250px;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .read-more-btn {
@@ -595,11 +595,17 @@ body, .container {
   margin-bottom: 30px;
   font-weight: bold;
 }
-
-.plagiarism-section p {
-  margin-bottom: 20px;
-  line-height: 1.8;
+.plagiarism-section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: bold;
 }
+
+.center-img {
+  display: block;
+  margin: 0 auto;
+}
+
 
 /* ======================
    WHY JOIN US
@@ -994,4 +1000,68 @@ html, body {
     .venue-images img { width: 100%; max-width: 320px; }
     .offline-marquee { font-size: 14px; padding: 10px 0; }
     .footer-text, .footer-links { font-size: 12px; }
+}
+.tpc-section { background:#f9f9f9; padding:60px 0; }
+.tpc-section h2 { font-size:28px; margin-bottom:30px; text-align:center; }
+.tpc-subheading { color:#1e88e5; font-size:20px; margin:20px 0 10px; font-weight:700; }
+.tpc-list { list-style:none; padding-left:0; margin-bottom:30px; }
+.tpc-list li { background:#fff; padding:12px 16px; margin-bottom:10px; border-left:4px solid #1e88e5; box-shadow:0 2px 6px rgba(0,0,0,.05); font-size:15px; line-height:1.6; }
+@media (max-width:768px){ .tpc-list li{ font-size:14px; padding:10px 12px; } }
+
+.important-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.date-item {
+  background: #f9fbff;
+  border-left: 4px solid #1e88e5;
+  padding: 12px 16px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.date-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.date-item strong {
+  display: block;
+  font-size: 15px;
+  color: #1e88e5;
+  margin-bottom: 4px;
+}
+
+.date-item br {
+  display: none; /* removes excessive line breaks */
+}
+
+.date-item span,
+.date-item {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Special highlight for very important deadlines */
+.date-item.critical {
+  border-left-color: #e53935; /* red for urgency */
+}
+
+.date-item.critical strong {
+  color: #e53935;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .date-item {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  .date-item strong {
+    font-size: 14px;
+  }
 }
