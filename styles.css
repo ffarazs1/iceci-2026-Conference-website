@@ -1227,3 +1227,28 @@ html, body {
   -ms-hyphens: auto;
   overflow-wrap: break-word;     /* prevent overflow on very long words/URLs */
 }
+.co-chairs {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.co-chairs h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #1e88e5;
+}
+
+.co-chairs ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.co-chairs li {
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+.cochair-name {
+    font-weight: 600;
+    color: #333;
+}
