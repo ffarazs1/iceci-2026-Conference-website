@@ -1219,3 +1219,11 @@ html, body {
   .member-photo { border: 1px solid #ddd; }
 }
 
+.justify {
+  text-align: justify;
+  text-justify: inter-word;      /* legacy/IE hint */
+  hyphens: auto;                 /* nicer breaks for long words */
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  overflow-wrap: break-word;     /* prevent overflow on very long words/URLs */
+}
