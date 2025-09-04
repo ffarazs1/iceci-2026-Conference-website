@@ -1252,3 +1252,100 @@ html, body {
     font-weight: 600;
     color: #333;
 }
+
+.accommodation {
+  background: #f9f9fb;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.accommodation h2 {
+  font-weight: 700;
+  color: #1e3c72;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.accommodation h3 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 25px 0 15px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.accommodation h3::before {
+  content: "🏨";
+  font-size: 1.5rem;
+}
+
+.accommodation p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.accommodation ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  text-align: left;   /* ensures everything aligns left */
+}
+
+.accommodation ul li {
+  background: #fff;
+  margin: 8px 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 4px solid #1e66ae;
+  transition: all 0.3s ease;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: left;   /* force content left */
+}
+
+.accommodation ul li strong {
+  color: #1e66ae;
+  display: inline-block; /* prevents auto centering */
+}
+
+.accommodation ul li:hover {
+  transform: translateX(6px);
+  background: #eef5ff;
+}
+.how-to-reach h2 {
+  font-weight: 700;
+  color: #1e3c72;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reach-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.reach-card:hover {
+  transform: translateY(-5px);
+  background: #f5f9ff;
+}
+
+.reach-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e66ae;
+  margin-bottom: 10px;
+}
+
+.reach-card p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
