@@ -153,11 +153,16 @@ body, .container {
   height: 80px;
   cursor: pointer;
 }
-
+@media (max-width: 768px) {
+  .ieee-logo {
+    display: none !important;
+  }
+}
 
 /* Menu Bar */
 .menu-bar {
   background: #00629B;
+  position: relative;
 }
 
 .menu-bar ul {
@@ -178,6 +183,37 @@ body, .container {
 .menu-bar li a:hover {
   background: #004b70;
 }
+
+/* Hamburger Button */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #004b70;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-bar ul {
+    flex-direction: column;
+    display: none; /* hidden by default */
+    background: #00629B;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-bar ul.show {
+    display: flex; /* shown when toggled */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
 
 /* ======================
    SLIDER WITH THUMBNAILS

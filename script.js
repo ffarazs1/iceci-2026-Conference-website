@@ -1,11 +1,23 @@
 
 // DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
+  initMobileMenu() 
   initSlider()
   initCountdown()
   initBackToTop()
   initSearch()
+ 
 })
+function initMobileMenu() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuList = document.getElementById('menu-list');
+
+  if (menuToggle && menuList) {
+    menuToggle.addEventListener('click', function() {
+      menuList.classList.toggle('show');
+    });
+  }
+}
 
 // ======================
 // SLIDER WITH THUMBNAILS
