@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Fee & Tax Calculator | ICECI 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<main class="container" style="max-width:980px;margin:0 auto;padding:24px;">
+
+  <h2>Registration Fee & Tax Calculator</h2>
+  <p>GST (18%) applies to Indian authors and VAT (12%) applies to International authors.</p>
+
+  <div class="card" style="padding:20px;border-radius:12px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+
+      <div>
+        <label>Author Type</label>
+        <select id="region">
+          <option value="indian">Indian Authors & Delegates (INR)</option>
+          <option value="nonindian">Non-Indian Authors & Delegates (USD)</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Category</label>
+        <select id="category"></select>
+      </div>
+
+      <div>
+        <label>Registration Type</label>
+        <select id="period">
+          <option value="early">Early Bird</option>
+          <option value="regular">Regular</option>
+        </select>
+      </div>
+
+      <div>
+        <label id="taxLabel">GST (18%)</label>
+        <input type="text" id="taxRate" readonly>
+      </div>
+
+    </div>
+
+    <hr style="margin:20px 0">
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+      <div class="resultBox">
+        <strong>Base Fee</strong>
+        <div id="baseFee">—</div>
+      </div>
+
+      <div class="resultBox">
+        <strong>Tax Amount</strong>
+        <div id="taxAmount">—</div>
+      </div>
+
+      <div class="resultBox">
+        <strong>Total Payable</strong>
+        <div id="totalFee">—</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script src="fee-calculator.js"></script>
+</body>
+</html>
