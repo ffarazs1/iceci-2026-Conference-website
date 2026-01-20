@@ -1,72 +1,373 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Fee & Tax Calculator | ICECI 2026</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICECI 2026 – Fee Calculator</title>
 
-  <link rel="stylesheet" href="styles.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
 
-<body>
-<main class="container" style="max-width:980px;margin:0 auto;padding:24px;">
+    <!-- Page-only styles (kept aligned with site theme colors) -->
+    <style>
+      .calc-panel {
+        border: 1px solid #dcdcdc;
+        background: #fff;
+        border-radius: 10px;
+        padding: 18px;
+        margin: 14px 0 18px;
+      }
 
-  <h2>Registration Fee & Tax Calculator</h2>
-  <p>GST (18%) applies to Indian authors and VAT (12%) applies to International authors.</p>
+      .calc-note {
+        background: #f7fbff;
+        border: 1px solid rgba(0, 98, 155, 0.25);
+        border-radius: 10px;
+        padding: 12px 14px;
+        margin-bottom: 14px;
+      }
 
-  <div class="card" style="padding:20px;border-radius:12px;">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+      .calc-note strong {
+        color: #00629B;
+      }
 
-      <div>
-        <label>Author Type</label>
-        <select id="region">
-          <option value="indian">Indian Authors & Delegates (INR)</option>
-          <option value="nonindian">Non-Indian Authors & Delegates (USD)</option>
-        </select>
+      .calc-grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 12px;
+        align-items: end;
+      }
+
+      .calc-col-4 { grid-column: span 4; }
+      .calc-col-6 { grid-column: span 6; }
+      .calc-col-12 { grid-column: span 12; }
+
+      .calc-field label {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: #111;
+      }
+
+      .calc-field select,
+      .calc-field input {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid #cfcfcf;
+        outline: none;
+        font-family: inherit;
+        font-size: 15px;
+        background: #fff;
+      }
+
+      .calc-field input[readonly] {
+        background: #f4f4f4;
+        cursor: not-allowed;
+      }
+
+      .calc-divider {
+        height: 1px;
+        background: #e6e6e6;
+        margin: 16px 0;
+      }
+
+      .calc-results {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .calc-box {
+        grid-column: span 4;
+        border: 1px solid #dcdcdc;
+        border-radius: 10px;
+        padding: 14px;
+        background: #fff;
+      }
+
+      .calc-box .label {
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 6px;
+      }
+
+      .calc-box .value {
+        font-size: 22px;
+        font-weight: 700;
+        color: #00629B;
+      }
+
+      .calc-box .sub {
+        margin-top: 6px;
+        font-size: 13px;
+        color: #555;
+      }
+
+      @media (max-width: 980px) {
+        .calc-col-4, .calc-col-6 { grid-column: span 12; }
+        .calc-box { grid-column: span 12; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top IEEE Bar -->
+    <div class="top-bar">
+      <div class="container top-links">
+        <a href="https://www.ieee.org/">IEEE.org</a>
+        |
+        <a href="https://ieeexplore.ieee.org/Xplore/home.jsp">
+          IEEE Xplore Digital Library
+        </a>
+        |
+        <a href="https://standards.ieee.org/">IEEE Standards</a>
+        |
+        <a href="https://spectrum.ieee.org/">IEEE Spectrum</a>
+        |
+        <a href="https://www.ieee.org/sitemap.html">More sites</a>
       </div>
-
-      <div>
-        <label>Category</label>
-        <select id="category"></select>
-      </div>
-
-      <div>
-        <label>Registration Type</label>
-        <select id="period">
-          <option value="early">Early Bird</option>
-          <option value="regular">Regular</option>
-        </select>
-      </div>
-
-      <div>
-        <label id="taxLabel">GST (18%)</label>
-        <input type="text" id="taxRate" readonly>
-      </div>
-
     </div>
 
-    <hr style="margin:20px 0">
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
-      <div class="resultBox">
-        <strong>Base Fee</strong>
-        <div id="baseFee">—</div>
+    <!-- Header (copied from your inner pages for consistency) -->
+    <header class="main-header">
+      <div class="container header-top">
+        <div class="logo-area">
+          <span class="conference-number">
+            2
+            <sup>nd</sup>
+          </span>
+          <img class="skyline" src="images/logo2.jpeg" alt="logo" />
+          <div>
+            <div class="conference-title">
+              <span class="icecie">ICECI</span>
+              <span class="year">2026</span>
+            </div>
+            <div class="conference-date">4-5 April 2026 | Aligarh, India</div>
+          </div>
+        </div>
+        <div class="right-icons">
+          <div class="search-container">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search ICECI'2026"
+            />
+            <button class="search-btn" aria-label="Search">
+              <img
+                src="https://img.icons8.com/ios-glyphs/20/00629B/search--v1.png"
+                alt="Search"
+                class="search-icon"
+              />
+            </button>
+          </div>
+          <div class="divider"></div>
+          <a href="https://www.ieee.org" target="_blank">
+            <img src="images/ieeeUP.png" alt="IEEE Logo" class="ieee-logo" />
+          </a>
+          <div class="divider"></div>
+          <a href="https://www.amu.ac.in" target="_blank">
+            <img src="images/logoAMU.png" alt="AMU Logo" class="ieee-logo" />
+          </a>
+        </div>
       </div>
 
-      <div class="resultBox">
-        <strong>Tax Amount</strong>
-        <div id="taxAmount">—</div>
-      </div>
+      <nav class="menu-bar">
+        <div class="menu-toggle" id="menu-toggle">☰ MENU</div>
+        <ul id="menu-list">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="https://amu.ac.in/miscellaneous/iceci-2023">ICECI 2023</a></li>
+          <li><a href="index.html#COMMITTEE">COMMITTEE</a></li>
+          <li><a href="authors.html">AUTHORS</a></li>
+          <li><a href="registration.html">REGISTRATION</a></li>
+          <li><a href="index.html#venue">VENUE/TRAVEL</a></li>
+          <li><a href="index.html#contact">CONTACT US</a></li>
+        </ul>
+      </nav>
+    </header>
 
-      <div class="resultBox">
-        <strong>Total Payable</strong>
-        <div id="totalFee">—</div>
+    <!-- Content -->
+    <section class="registration-section">
+      <div class="container content-wrapper">
+        <!-- Left Content -->
+        <div class="main-content-area">
+          <h1>Fee & Tax Calculator</h1>
+          <p>
+            Use this calculator to get the <strong>base fee</strong>, <strong>tax amount</strong>,
+            and <strong>total payable</strong>. Taxes are applied separately.
+          </p>
+
+          <h2 class="highlight-heading yellow">CALCULATE YOUR PAYABLE AMOUNT</h2>
+
+          <div class="calc-panel">
+            <div class="calc-note">
+              <strong>Tax Rules:</strong>
+              Indian registrations use <strong>GST 18%</strong>. International registrations use <strong>VAT 12%</strong>.
+            </div>
+
+            <div class="calc-grid">
+              <div class="calc-field calc-col-4">
+                <label for="region">Author Type</label>
+                <select id="region">
+                  <option value="indian">Indian Authors & Delegates (INR)</option>
+                  <option value="nonindian">Non-Indian Authors & Delegates (USD)</option>
+                </select>
+              </div>
+
+              <div class="calc-field calc-col-4">
+                <label for="category">Category</label>
+                <select id="category"></select>
+              </div>
+
+              <div class="calc-field calc-col-4">
+                <label for="period">Registration Type</label>
+                <select id="period">
+                  <option value="early">Early Bird</option>
+                  <option value="regular">Regular</option>
+                </select>
+              </div>
+
+              <div class="calc-field calc-col-4">
+                <label id="taxLabel" for="taxRate">GST (18%)</label>
+                <input id="taxRate" type="text" readonly value="18%" />
+              </div>
+
+              <div class="calc-col-12 calc-divider"></div>
+
+              <div class="calc-results calc-col-12">
+                <div class="calc-box">
+                  <div class="label">Base Fee</div>
+                  <div class="value" id="baseFee">—</div>
+                  <div class="sub">Fee before GST/VAT</div>
+                </div>
+
+                <div class="calc-box">
+                  <div class="label">Tax Amount</div>
+                  <div class="value" id="taxAmount">—</div>
+                  <div class="sub">GST/VAT calculated separately</div>
+                </div>
+
+                <div class="calc-box">
+                  <div class="label">Total Payable</div>
+                  <div class="value" id="totalFee">—</div>
+                  <div class="sub">Base Fee + Tax</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="highlight-heading yellow">NOTE</h2>
+          <ul class="guidelines">
+            <li>Values are based on the registration fee tables published on the Registration page.</li>
+            <li>Tax is computed separately and added to the base amount.</li>
+          </ul>
+        </div>
+
+        <!-- Right Sidebar (reused from registration page for consistency) -->
+        <div class="sidebar">
+          <div class="sidebar-section">
+            <h3>IMPORTANT DATES</h3>
+            <div class="important-dates">
+              <div class="date-item">
+                <strong>Paper Submission Deadline:</strong><br />
+                <s>30<sup>th</sup> November 2025</s><br /><br />
+                <b>11<sup>th</sup> January 2026 (Hard Deadline)</b><br />
+              </div>
+
+              <div class="date-item">
+                <strong>Acceptance & Notification for Registration:</strong><br />
+                10<sup>th</sup> February 2026
+              </div>
+
+              <div class="date-item">
+                <strong>Final Submission (Camera-Ready):</strong><br />
+                20<sup>th</sup> February 2026
+              </div>
+
+              <div class="date-item">
+                <strong>Early Bird Registration Deadline:</strong><br />
+                05<sup>th</sup> March 2026<br />
+                <strong>Last Date of Registration:</strong><br />
+                15<sup>th</sup> March 2026
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <h3>CONTACT</h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <strong>General Info:</strong><br />
+                conference.cs@amu.ac.in
+              </div>
+              <div class="contact-item">
+                <strong>Prof. Arman Rasool Faridi:</strong><br />
+                +91 8192865250
+              </div>
+              <div class="contact-item">
+                <strong>Dr. Shafiqul Abidin:</strong><br />
+                +91 9818294415
+              </div>
+              <div class="contact-item">
+                <strong>Dr. Asif Irshad Khan:</strong><br />
+                +91 7078636860
+              </div>
+              <div class="contact-item">
+                <strong>Dr. Faisal Anwer:</strong><br />
+                +91 8171318692
+              </div>
+              <div class="contact-item">
+                <strong>Dr. Mohammad Sajid:</strong><br />
+                +91 9634622950
+              </div>
+              <div class="contact-item">
+                <strong>Dr. Mohammad Nadeem:</strong><br />
+                +91 8750919969
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+
+    <div class="cmt-acknowledgment">
+      <p>
+        <strong>CMT Acknowledgment:</strong> The Microsoft CMT service was used for managing the
+        peer-reviewing process for this conference. This service was provided for free by Microsoft
+        and they bore all expenses, including costs for Azure cloud services as well as for software
+        development and support.
+      </p>
     </div>
-  </div>
 
-</main>
+    <!-- Footer (copied from your pages for consistency) -->
+    <footer class="footer">
+      <div class="container footer-links">
+        <a href="index.html">HOME</a>
+        |
+        <a href="https://www.amu.ac.in/" target="_blank">AMU Website</a>
+        |
+        <a href="https://www.amu.ac.in/department/computer-science" target="_blank">
+          Department of Computer Science
+        </a>
+        |
+        <a href="https://amu.ac.in/miscellaneous/iceci-2023" target="_blank">
+          ICECI 2023
+        </a>
+        |
+        <a href="https://privacy.ieee.org/policies" target="_blank">
+          IEEE PRIVACY POLICY
+        </a>
+      </div>
+      <div class="footer-text">
+        <p>© Copyright 2026 ICECI - All rights reserved.</p>
+      </div>
+      <a href="#" class="back-to-top">▲ Back to Top</a>
+    </footer>
 
-<script src="fee-calculator.js"></script>
-</body>
+    <!-- Scripts -->
+    <script src="fee-calculator.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
