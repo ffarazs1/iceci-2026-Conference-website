@@ -9,7 +9,7 @@ const baseFeeEl = document.getElementById("baseFee");
 const taxAmountEl = document.getElementById("taxAmount");
 const totalFeeEl = document.getElementById("totalFee");
 
-/* Exact values from your tables */
+/* EXACT values from your Registration tables */
 const feeStructure = {
   indian: {
     currency: "₹",
@@ -39,14 +39,15 @@ const feeStructure = {
 };
 
 function format(currency, value) {
-  return `${currency} ${value.toFixed(2)}`;
+  // keep simple consistent formatting with site
+  return `${currency} ${Number(value).toFixed(2)}`;
 }
 
 function populateCategories() {
   const data = feeStructure[region.value];
   category.innerHTML = "";
 
-  Object.keys(data.categories).forEach(cat => {
+  Object.keys(data.categories).forEach((cat) => {
     const opt = document.createElement("option");
     opt.value = cat;
     opt.textContent = cat;
@@ -63,7 +64,7 @@ function updateTaxUI() {
 function calculate() {
   const data = feeStructure[region.value];
   const base = data.categories[category.value][period.value];
-  const tax = base * data.taxRate / 100;
+  const tax = (base * data.taxRate) / 100;
   const total = base + tax;
 
   baseFeeEl.textContent = format(data.currency, base);
