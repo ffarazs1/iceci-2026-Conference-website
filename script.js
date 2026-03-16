@@ -170,3 +170,22 @@ function initSearch() {
     }
   })
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const accordions = document.querySelectorAll(".track-accordion");
+
+  accordions.forEach((accordion) => {
+    const button = accordion.querySelector(".track-toggle");
+
+    button.addEventListener("click", function () {
+      const isActive = accordion.classList.contains("active");
+
+      accordions.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      if (!isActive) {
+        accordion.classList.add("active");
+      }
+    });
+  });
+});
