@@ -1064,6 +1064,19 @@ html, body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+  .conference-record {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    
+  }
+
+  .record-number {
+    color: #ffffff;
+    font-weight: 700;
+  
+  }
+
 .date-item strong {
   display: block;
   font-size: 15px;
