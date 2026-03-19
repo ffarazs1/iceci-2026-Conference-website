@@ -955,9 +955,61 @@ body, .container {
 .offline-marquee span {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll-left 40s linear infinite;
+  animation: scroll-left 25s linear infinite;
+}
+.conference-banner {
+  width: 100%;
+  background: linear-gradient(135deg, #fff5f5, #ffeaea);
+  border: 2px solid #c00;
+  border-radius: 10px;
+  padding: 18px 20px;
+  text-align: center;
+  margin: 30px 0 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.8s ease-in-out;
 }
 
+.conference-banner p {
+  margin: 6px 0;
+}
+
+.conference-banner .highlight {
+  font-size: 22px;
+  font-weight: 700;
+  color: #b30000;
+}
+
+.conference-banner .highlight a {
+  color: #0044cc;
+  text-decoration: underline;
+}
+
+.conference-banner .important {
+  font-size: 18px;
+  color: #990000;
+}
+
+.conference-banner .offline {
+  color: #d10000;
+  font-weight: bold;
+}
+
+.conference-banner .note {
+  font-size: 15px;
+  color: #13435a;
+}
+
+/* subtle animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes scroll-left {
   0% {
     transform: translateX(100%);
