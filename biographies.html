@@ -1,347 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ICECI 2026 – Aligarh, India | 04-05 April 2026</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICECI 2026 – Invited Speaker Biographies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://conference.csd.amu.ac.in/styles.css" />
+  <style>
+    :root {
+      --iceci-blue: #0a5f97;
+      --iceci-deep: #003b5c;
+      --iceci-accent: #0c77b8;
+      --iceci-light: #eef7fc;
+      --iceci-border: #d6e7f2;
+      --iceci-text: #213547;
+      --page-bg: #f4f7fa;
+    }
+
     * {
       box-sizing: border-box;
     }
 
-    html,
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background: #dfe8ef;
-      color: #16354c;
-      font-family: "Roboto", Arial, sans-serif;
+      width: 100%;
+      min-height: 100%;
     }
 
-    a {
-      text-decoration: none;
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--page-bg);
+      color: var(--iceci-text);
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .site-shell {
-      width: min(96%, 1200px);
+    /* FULL SITE WRAPPER CENTERED IN VIEWPORT */
+    .site-wrapper {
+      width: 100%;
+      max-width: 1600px;
       margin: 0 auto;
     }
 
-    .top-bar {
-      background: #d7e3eb;
-      color: #005b8f;
-      font-size: 13px;
-      line-height: 1.4;
-      padding: 12px 20px;
+    /* force all top sections to span available centered width */
+    .top-bar,
+    .main-header,
+    .menu-bar,
+    .page-center {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .top-bar a {
-      color: #005b8f;
+    /* override external theme container if needed */
+    .top-bar .top-links,
+    .main-header .header-top {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
 
-    .main-header {
+    /* center menu properly */
+    .menu-bar ul {
+      width: 100%;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    /* PAGE CONTENT AREA */
+    .page-center {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 42px 20px 48px;
+    }
+
+    /* CENTERED MAIN SECTION */
+    .main-content {
+      width: 62%;
+      max-width: 980px;
+      min-width: 320px;
+    }
+
+    .content-panel {
+      width: 100%;
+      background: #fff;
+      border: 1px solid var(--iceci-border);
+      border-radius: 22px;
+      box-shadow: 0 10px 28px rgba(15, 66, 98, 0.08);
+      overflow: hidden;
+    }
+
+    .section-head {
+      padding: 34px 28px 26px;
+      text-align: center;
+      border-bottom: 1px solid var(--iceci-border);
       background: #ffffff;
     }
 
-    .header-row {
-      min-height: 116px;
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand-block {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-      flex: 1 1 auto;
-    }
-
-    .edition {
-      color: #f06c00;
-      font-size: 40px;
-      font-weight: 800;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .round-logo {
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex: 0 0 auto;
-    }
-
-    .title-stack {
-      min-width: 0;
-    }
-
-    .conference-title {
-      margin: 0;
-      line-height: 1;
-      font-size: 34px;
-      font-weight: 800;
-      color: #005b8f;
-      white-space: nowrap;
-    }
-
-    .conference-title .year {
-      color: #f06c00;
-    }
-
-    .conference-date {
-      margin-top: 10px;
-      font-size: 15px;
-      color: #005b8f;
-    }
-
-    .partner-logos {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 16px;
-      flex: 0 0 auto;
-    }
-
-    .v-sep {
-      width: 1px;
-      height: 32px;
-      background: #c8d2dc;
-    }
-
-    .ieee-logo {
-      height: 60px;
-      width: auto;
-    }
-
-    .amu-logo {
-      height: 68px;
-      width: auto;
-    }
-
-    .menu-bar {
-      background: #005f97;
-    }
-
-    .menu-list {
-      list-style: none;
-      margin: 0;
-      padding: 0 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .menu-list li {
-      margin: 0;
-    }
-
-    .menu-list a {
-      display: block;
-      color: #ffffff;
-      font-size: 15px;
-      font-weight: 700;
-      padding: 16px 18px;
-      text-transform: uppercase;
-    }
-
-    .menu-list a:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .hero-wrap,
-    .note-wrap,
-    .content-wrap,
-    .footer-wrap {
-      width: 100%;
-    }
-
-    .hero {
-      margin: 28px 0 24px;
-      padding: 36px 42px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #164d72 0%, #0d6398 60%, #4d8ebb 100%);
-      color: #ffffff;
-      box-shadow: 0 10px 28px rgba(22, 63, 95, 0.14);
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      margin: 0 0 14px;
-      font-size: 34px;
+    .section-head h1 {
+      margin: 0 0 12px;
+      color: var(--iceci-deep);
+      font-size: clamp(2rem, 3vw, 2.9rem);
       line-height: 1.15;
       font-weight: 800;
-      color: #ffffff;
     }
 
-    .hero p {
-      margin: 0;
-      max-width: 950px;
-      font-size: 17px;
-      line-height: 1.7;
-      color: rgba(255, 255, 255, 0.98);
-    }
-
-    .section-note {
-      width: min(92%, 980px);
-      margin: 0 auto 28px;
-      text-align: center;
-      color: #4d6d88;
-      font-size: 15px;
+    .section-head p {
+      margin: 0 auto;
+      max-width: 760px;
+      font-size: 1rem;
       line-height: 1.75;
+      color: #5c7181;
     }
 
-    .bios {
-      padding-bottom: 24px;
+    .bios-wrap {
+      padding: 30px;
     }
 
     .bio-card {
       display: flex;
-      gap: 26px;
       align-items: flex-start;
-      background: #ffffff;
+      gap: 28px;
+      width: 100%;
+      margin: 0 0 24px;
+      padding: 26px;
+      background: #fff;
+      border: 1px solid var(--iceci-border);
+      border-left: 6px solid var(--iceci-blue);
       border-radius: 18px;
-      padding: 28px;
-      margin-bottom: 22px;
-      border: 1px solid #bfd4e2;
-      border-left: 6px solid #0c6aa1;
-      box-shadow: 0 6px 18px rgba(24, 65, 94, 0.08);
+      box-shadow: 0 8px 20px rgba(15, 66, 98, 0.06);
+    }
+
+    .bio-card:last-child {
+      margin-bottom: 0;
     }
 
     .bio-photo {
-      width: 176px;
-      min-width: 176px;
-      height: 210px;
+      flex: 0 0 170px;
+      width: 170px;
+      height: 205px;
       object-fit: cover;
       border-radius: 14px;
-      background: #eef3f7;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      border: 3px solid #f2f7fb;
+      background: #fff;
+      box-shadow: 0 6px 16px rgba(15, 66, 98, 0.10);
     }
 
     .bio-content {
       flex: 1 1 auto;
       min-width: 0;
+      text-align: left;
     }
 
     .bio-name {
-      margin: 0 0 10px;
-      font-size: 22px;
-      line-height: 1.25;
+      margin: 0 0 6px;
+      color: var(--iceci-deep);
+      font-size: 1.3rem;
+      line-height: 1.28;
       font-weight: 800;
-      color: #004d7a;
       text-transform: uppercase;
     }
 
     .bio-designation {
       margin: 0 0 16px;
-      color: #5e758a;
-      font-size: 15px;
-      line-height: 1.6;
-      font-weight: 700;
+      color: #637a89;
+      font-size: 0.98rem;
+      line-height: 1.65;
+      font-weight: 500;
     }
 
-    .talk-box {
-      margin: 0 0 16px;
-      padding: 13px 16px;
-      background: #eef6fb;
-      border-left: 4px solid #0c6aa1;
+    .talk-title {
+      margin: 0 0 15px;
+      padding: 12px 15px;
+      background: var(--iceci-light);
+      border-left: 4px solid var(--iceci-accent);
       border-radius: 10px;
-      color: #274e68;
-      font-size: 15px;
-      line-height: 1.6;
+      font-size: 0.97rem;
+      line-height: 1.7;
+      color: #355061;
     }
 
-    .talk-box strong {
-      color: #003e63;
+    .talk-title strong {
+      color: var(--iceci-deep);
     }
 
     .bio-text {
-      color: #16354c;
-      font-size: 16px;
-      line-height: 1.82;
-      text-align: justify;
       margin: 0;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #233947;
+      text-align: left;
       word-break: normal;
       overflow-wrap: break-word;
+      hyphens: none;
     }
 
-    .footer-note {
+    .page-note {
+      margin-top: 18px;
+      padding: 14px 16px;
       text-align: center;
-      color: #4d6d88;
-      font-size: 15px;
-      line-height: 1.7;
-      padding: 8px 0 36px;
+      color: #617786;
+      background: #fff;
+      border: 1px solid var(--iceci-border);
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(15, 66, 98, 0.05);
     }
 
-    @media (max-width: 1024px) {
-      .header-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .partner-logos {
-        justify-content: center;
-      }
-
-      .brand-block {
-        justify-content: center;
-      }
-
-      .conference-title,
-      .conference-date {
-        text-align: left;
+    @media (max-width: 1300px) {
+      .main-content {
+        width: 68%;
       }
     }
 
-    @media (max-width: 820px) {
-      .hero {
-        padding: 28px 22px;
+    @media (max-width: 1050px) {
+      .main-content {
+        width: 78%;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .main-content {
+        width: 88%;
       }
 
-      .hero h1 {
-        font-size: 30px;
+      .bio-card {
+        gap: 20px;
+      }
+
+      .bio-photo {
+        flex-basis: 145px;
+        width: 145px;
+        height: 178px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .page-center {
+        padding: 22px 10px 30px;
+      }
+
+      .main-content {
+        width: 100%;
+      }
+
+      .section-head,
+      .bios-wrap {
+        padding-left: 16px;
+        padding-right: 16px;
       }
 
       .bio-card {
         flex-direction: column;
         align-items: center;
-        padding: 22px 18px;
+        padding: 18px;
       }
 
       .bio-photo {
-        width: 170px;
-        min-width: 170px;
-        height: 204px;
-      }
-
-      .bio-content {
-        width: 100%;
+        width: 160px;
+        height: 192px;
       }
 
       .bio-name,
@@ -349,511 +271,195 @@
         text-align: center;
       }
 
+      .bio-content,
       .bio-text {
+        width: 100%;
         text-align: left;
       }
     }
-
-    @media (max-width: 640px) {
-      .site-shell {
-        width: min(98%, 1200px);
-      }
-
-      .top-bar {
-        padding: 10px 14px;
-      }
-
-      .header-row {
-        padding: 14px 14px 12px;
-      }
-
-      .edition {
-        font-size: 30px;
-      }
-
-      .round-logo {
-        width: 56px;
-        height: 56px;
-      }
-
-      .conference-title {
-        font-size: 28px;
-        white-space: normal;
-      }
-
-      .conference-date {
-        font-size: 14px;
-      }
-
-      .partner-logos {
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-
-      .ieee-logo {
-        height: 42px;
-      }
-
-      .amu-logo {
-        height: 52px;
-      }
-
-      .menu-list {
-        justify-content: flex-start;
-      }
-
-      .menu-list a {
-        padding: 13px 14px;
-        font-size: 14px;
-      }
-
-      .hero {
-        margin-top: 20px;
-      }
-
-      .hero h1 {
-        font-size: 27px;
-      }
-
-      .hero p,
-      .bio-text {
-        font-size: 15px;
-      }
-    }
   </style>
-  </head>
-  <body>
-    <!-- Top IEEE Bar -->
+</head>
+<body>
+  <div class="site-wrapper">
     <div class="top-bar">
-      <div class="container top-links">
-        <a href="https://www.ieee.org/">IEEE.org</a>
-        |
-        <a href="https://ieeexplore.ieee.org/Xplore/home.jsp">
-          IEEE Xplore Digital Library
-        </a>
-        |
-        <a href="https://standards.ieee.org/">IEEE Standards</a>
-        |
-        <a href="https://spectrum.ieee.org/">IEEE Spectrum</a>
-        |
+      <div class="container top-links" style="display:block; padding:8px 20px; background:none; border:none; box-shadow:none; border-radius:0;">
+        <a href="https://www.ieee.org/">IEEE.org</a> |
+        <a href="https://ieeexplore.ieee.org/Xplore/home.jsp">IEEE Xplore Digital Library</a> |
+        <a href="https://standards.ieee.org/">IEEE Standards</a> |
+        <a href="https://spectrum.ieee.org/">IEEE Spectrum</a> |
         <a href="https://www.ieee.org/sitemap.html">More sites</a>
       </div>
     </div>
 
-    <!-- Header -->
-    <!-- Header -->
     <header class="main-header">
-      <div class="container header-top">
+      <div class="container header-top" style="border:none; border-radius:0; box-shadow:none; padding:0 20px;">
         <div class="logo-area">
-          <span class="conference-number">
-            2
-            <sup>nd</sup>
-          </span>
-          <img class="skyline" src="images/logo2.jpeg" alt="logo" />
+          <span class="conference-number">2<sup>nd</sup></span>
+          <img class="skyline" src="https://conference.csd.amu.ac.in/images/icon.jpg" alt="ICECI logo" />
           <div>
-            <div class="conference-title">
-              <span class="icecie">ICECI</span>
-              <span class="year">2026</span>
-            </div>
+            <div class="conference-title"><span class="icecie">ICECI</span><span class="year">2026</span></div>
             <div class="conference-date">4-5 April 2026 | Aligarh, India</div>
           </div>
         </div>
         <div class="right-icons">
-          <div class="search-container">
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Search ICECI'2026"
-            />
-            <button class="search-btn" aria-label="Search">
-              <img
-                src="https://img.icons8.com/ios-glyphs/20/00629B/search--v1.png"
-                alt="Search"
-                class="search-icon"
-              />
-            </button>
-          </div>
-          <div class="divider"></div>
           <a href="https://www.ieee.org" target="_blank">
-            <img src="images/ieeeUP.png" alt="IEEE Logo" class="ieee-logo" />
+            <img src="https://conference.csd.amu.ac.in/images/ieeeUP.png" alt="IEEE Logo" class="ieee-logo" />
           </a>
           <div class="divider"></div>
           <a href="https://www.amu.ac.in" target="_blank">
-            <img src="images/logoAMU.png" alt="IEEE Logo" class="ieee-logo" />
+            <img src="https://conference.csd.amu.ac.in/images/logoAMU.png" alt="AMU Logo" class="ieee-logo" />
           </a>
         </div>
       </div>
-     <nav class="menu-bar">
-  <div class="menu-toggle" id="menu-toggle">
-    ☰ MENU
-  </div>
-  <ul id="menu-list">
-    <li><a href="index.html">HOME</a></li>
-    <li><a href="https://amu.ac.in/miscellaneous/iceci-2023">ICECI 2023</a></li>
-    <li><a href="index.html#COMMITTEE">COMMITTEE</a></li>
-    <li><a href="authors.html">AUTHORS</a></li>
-    <li><a href="registration.html">REGISTRATION</a></li>
-    <li><a href="index.html#venue">VENUE/TRAVEL</a></li>
-    <li><a href="index.html#contact">CONTACT US</a></li>
-  </ul>
-</nav>
+
+      <nav class="menu-bar">
+        <div class="menu-toggle" id="menu-toggle">☰ MENU</div>
+        <ul id="menu-list">
+          <li><a href="https://conference.csd.amu.ac.in/index.html">HOME</a></li>
+          <li><a href="https://amu.ac.in/miscellaneous/iceci-2023">ICECI 2023</a></li>
+          <li><a href="https://conference.csd.amu.ac.in/index.html#COMMITTEE">COMMITTEE</a></li>
+          <li><a href="https://conference.csd.amu.ac.in/authors.html">AUTHORS</a></li>
+          <li><a href="https://conference.csd.amu.ac.in/registration.html">REGISTRATION</a></li>
+          <li><a href="https://conference.csd.amu.ac.in/index.html#venue">VENUE/TRAVEL</a></li>
+          <li><a href="https://conference.csd.amu.ac.in/index.html#contact">CONTACT US</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- Registration Fees Section -->
-    <section class="registration-section">
-      <div class="container content-wrapper">
-        <!-- Left Content -->
-        <div class="main-content-area">
-          <h1>Our Speakers</h1>
-          <main class="content-wrap bios">
-      <article class="bio-card">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYWY_q1188ygKSVwZGXmIsDKd_exIBJaYNjw&s"
-          alt="Dr. Abdul Quaiyum Ansari"
-          class="bio-photo"
-        />
-        <div class="bio-content">
-          <h2 class="bio-name">Dr. Abdul Quaiyum Ansari</h2>
-          <div class="bio-designation">
-            (Professor, Department of Electrical Engineering, Jamia Millia Islamia, India)
+    <div class="page-center">
+      <main class="main-content">
+        <section class="content-panel">
+          <div class="section-head">
+            <h1>Invited Speaker Biographies</h1>
+            <p>Profiles of keynote, invited, and industry speakers participating in ICECI 2026.</p>
           </div>
-          <p class="bio-text">
-            Dr. Abdul Quaiyum Ansari is a Professor in the Department of Electrical
-            Engineering at Jamia Millia Islamia, New Delhi. He holds a B.Sc. (Engg.)
-            from Aligarh Muslim University, M.Tech. from IIT Delhi, and a Ph.D. in
-            Hierarchical Fuzzy Control. He has held academic positions at King
-            Khalid University (KSA) and Jamia Hamdard, New Delhi. With a strong
-            research portfolio, he has published around 100 international journal
-            papers and 130 conference publications, along with books and book
-            chapters. He has delivered over 150 keynote and invited talks at
-            national and international platforms. His research interests include
-            Computer Networks, Cyber Security, Microwave Antennas, HEMT Devices, and
-            Soft Computing. He is a Fellow and Chartered Engineer of IEI and IETE,
-            and a Senior Member of IEEE. He has held key leadership roles, including
-            Chairman of IEEE Delhi Section (2023–24), and contributes actively to
-            IEEE humanitarian initiatives. He is an IEEE DataPort Ambassador and
-            serves on its Steering Committee. He is a recipient of the ISTE National
-            Award for Promising Engineering Teacher. Known for academic leadership
-            and excellence in teaching, he continues to contribute significantly to
-            research, innovation, and engineering education.
-          </p>
-        </div>
-      </article>
 
-      <article class="bio-card">
-        <img
-          src="https://conference.csd.amu.ac.in/images/dag.jpeg"
-          alt="Prof. Dag Øivind Madsen"
-          class="bio-photo"
-        />
-        <div class="bio-content">
-          <h2 class="bio-name">Prof. Dag Øivind Madsen</h2>
-          <div class="bio-designation">
-            (Professor, Department of Business, Marketing and Law, USN School of Business, Norway.)
-          </div>
-          <p class="bio-text">
-            Prof. Dag Øivind Madsen is a Professor at the University of
-            South-Eastern Norway, School of Business, recognized for integrating
-            rigorous scholarship with impactful teaching and academic leadership.
-            With a multidisciplinary foundation spanning accounting, finance,
-            sociology, and organizational psychology, he brings a comprehensive
-            perspective to business education. He holds a Ph.D. from the Norwegian
-            School of Economics (NHH) and an MSc in Accounting and Finance from the
-            London School of Economics. His academic journey is further enriched by
-            studies at the University of Bergen in sociology and work and
-            organizational psychology. His work bridges theory and practice across
-            finance, accounting, organizational behavior, and governance. He is
-            widely regarded for mentoring students and collaborating with industry
-            to translate research into real-world impact. Prof. Madsen continues to
-            contribute meaningfully to advancing business scholarship and practice.
-          </p>
-        </div>
-      </article>
+          <div class="bios-wrap">
+            <div class="bio-card">
+              <img alt="Prof. Abdul Quaiyum Ansari" class="bio-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYWY_q1188ygKSVwZGXmIsDKd_exIBJaYNjw&s" />
+              <div class="bio-content">
+                <h2 class="bio-name">DR. ABDUL QUAIYUM ANSARI</h2>
+                <p class="bio-designation">(Professor, Department of Electrical Engineering, Jamia Millia Islamia, India)</p>
+                <p class="bio-text">
+                  Dr. Abdul Quaiyum Ansari is a Professor in the Department of Electrical Engineering at Jamia Millia Islamia, New Delhi. He holds a B.Sc. (Engg.) from Aligarh Muslim University, M.Tech. from IIT Delhi, and a Ph.D. in Hierarchical Fuzzy Control. He has held academic positions at King Khalid University (KSA) and Jamia Hamdard, New Delhi. With a strong research portfolio, he has published around 100 international journal papers and 130 conference publications, along with books and book chapters. He has delivered over 150 keynote and invited talks at national and international platforms. His research interests include Computer Networks, Cyber Security, Microwave Antennas, HEMT Devices, and Soft Computing. He is a Fellow and Chartered Engineer of IEI and IETE, and a Senior Member of IEEE. He has held key leadership roles, including Chairman of IEEE Delhi Section (2023–24), and contributes actively to IEEE humanitarian initiatives. He is an IEEE DataPort Ambassador and serves on its Steering Committee. He is a recipient of the ISTE National Award for Promising Engineering Teacher. Known for academic leadership and excellence in teaching, he continues to contribute significantly to research, innovation, and engineering education.
+                </p>
+              </div>
+            </div>
 
-      <article class="bio-card">
-        <img
-          src="https://people.sau.int/uploads/1727018093.jpg"
-          alt="Prof. Muhammad Abulaish"
-          class="bio-photo"
-        />
-        <div class="bio-content">
-          <h2 class="bio-name">Prof. Muhammad Abulaish</h2>
-          <div class="bio-designation">
-            (Professor, Department of Computer Science, South Asian University, India)
-          </div>
-          <p class="bio-text">
-            Prof. M. Abulaish is a Professor of Computer Science at South Asian
-            University, New Delhi, with over 26 years of distinguished experience in
-            academia and research. He has been serving at SAU since 2016 and has
-            held several key leadership roles, including Chairperson of the
-            Department of Computer Science, Director (Admissions and Examinations),
-            and Acting Registrar. Prior to this, he served for over 18 years as
-            Professor and Head of the Department of Computer Science at Jamia Millia
-            Islamia. He also led the Internet Surveillance and Forensics research
-            group at King Saud University, Saudi Arabia. He earned his Ph.D. in
-            Computer Science from IIT Delhi and founded the Laboratory for Data
-            Science and Analytics (LDSA) at SAU. His research focuses on data
-            mining, artificial intelligence, machine learning, and network analysis,
-            addressing challenges in text mining, social networks, sentiment
-            analysis, cybersecurity, and health informatics. He has published over
-            140 research articles in reputed journals, books, and conferences,
-            including multiple IEEE/ACM Transactions. He actively contributes to the
-            global research community as an Associate Editor, program committee
-            member for top-tier conferences, and reviewer for leading journals. He
-            holds senior memberships in IEEE, ACM, and CSI, along with lifetime
-            memberships in ISTE, IETE, and ISCA. Through his work, he continues to
-            advance data-driven research with strong societal and industrial impact.
-          </p>
-        </div>
-      </article>
+            <div class="bio-card">
+              <img alt="Prof. Dag Øivind Madsen" class="bio-photo" src="https://conference.csd.amu.ac.in/images/dag.jpeg" />
+              <div class="bio-content">
+                <h2 class="bio-name">PROF. DAG ØIVIND MADSEN</h2>
+                <p class="bio-designation">(Professor, Department of Business, Marketing and Law, USN School of Business, Norway)</p>
+                <p class="bio-text">
+                  Prof. Dag Øivind Madsen is a Professor at the University of South-Eastern Norway, School of Business, recognized for integrating rigorous scholarship with impactful teaching and academic leadership. With a multidisciplinary foundation spanning accounting, finance, sociology, and organizational psychology, he brings a comprehensive perspective to business education. He holds a Ph.D. from the Norwegian School of Economics (NHH) and an MSc in Accounting and Finance from the London School of Economics. His academic journey is further enriched by studies at the University of Bergen in sociology and work and organizational psychology. His work bridges theory and practice across finance, accounting, organizational behavior, and governance. He is widely regarded for mentoring students and collaborating with industry to translate research into real-world impact. Prof. Madsen continues to contribute meaningfully to advancing business scholarship and practice.
+                </p>
+              </div>
+            </div>
 
-      <article class="bio-card">
-        <img
-          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.2s_WTFpZSWtAxrlTb5UHqQAAAA%3Fpid%3DApi&f=1&ipt=1698cf2f5bde0bfbdd0049aeeee2254bec255846a70860fa423749d85b4ff53b&ipo=images"
-          alt="Dr. Iqbal H. Sarker"
-          class="bio-photo"
-        />
-        <div class="bio-content">
-          <h2 class="bio-name">Dr. Iqbal H. Sarker</h2>
-          <div class="bio-designation">
-            (Research Fellow, Centre for Securing Digital Futures, Edith Cowan University, Australia)
-          </div>
-          <p class="bio-text">
-            Dr. Iqbal Hassan Sarker is a research fellow at the Centre for Securing
-            Digital Futures, Edith Cowan University, and an Adjunct Fellow at the
-            DigiSAS Lab, School of Computer Science, University of Technology
-            Sydney. He earned his PhD in Computer Science from Swinburne University
-            of Technology (Melbourne) in 2018. Dr Sarker’s research spans
-            cybersecurity, AI and data-driven technologies, digital twins, and AI
-            applications for business transformation and SMEs. He has published more
-            than 100 peer-reviewed journal and conference papers in outlets such as
-            Elsevier, Springer Nature, IEEE, ACM and Oxford University Press, and is
-            lead author of two Springer Nature research monographs: Context-Aware
-            Machine Learning and Mobile Data Analytics, and AI-Driven Cybersecurity
-            and Threat Intelligence. His research impact has been recognized by
-            ScholarGPS and by inclusion in the world’s top 2% of most-cited
-            scientists (Elsevier/Stanford). He has worked with the Cyber Security
-            Cooperative Research Centre and collaborated with CSIRO’s Data61 through
-            academia–industry partnerships. Dr Sarker teaches and supervises across
-            AI, machine learning, data science, database systems, project management
-            and programming, and contributes to research leadership through
-            editorial boards, conference program committees and postgraduate
-            supervision. He is active in industry engagement and mentoring
-            (including IMNIS) and is a member of ACM, IEEE and the Australian
-            Information Security Association.
-          </p>
-        </div>
-      </article>
+            <div class="bio-card">
+              <img alt="Prof. Muhammad Abulaish" class="bio-photo" src="https://people.sau.int/uploads/1727018093.jpg" />
+              <div class="bio-content">
+                <h2 class="bio-name">PROF. MUHAMMAD ABULAISH</h2>
+                <p class="bio-designation">(Professor, Department of Computer Science, South Asian University, India)</p>
+                <p class="bio-text">
+                  Prof. M. Abulaish is a Professor of Computer Science at South Asian University, New Delhi, with over 26 years of distinguished experience in academia and research. He has been serving at SAU since 2016 and has held several key leadership roles, including Chairperson of the Department of Computer Science, Director (Admissions and Examinations), and Acting Registrar. Prior to this, he served for over 18 years as Professor and Head of the Department of Computer Science at Jamia Millia Islamia. He also led the Internet Surveillance and Forensics research group at King Saud University, Saudi Arabia. He earned his Ph.D. in Computer Science from IIT Delhi and founded the Laboratory for Data Science and Analytics (LDSA) at SAU. His research focuses on data mining, artificial intelligence, machine learning, and network analysis, addressing challenges in text mining, social networks, sentiment analysis, cybersecurity, and health informatics. He has published over 140 research articles in reputed journals, books, and conferences, including multiple IEEE/ACM Transactions. He actively contributes to the global research community as an Associate Editor, program committee member for top-tier conferences, and reviewer for leading journals. He holds senior memberships in IEEE, ACM, and CSI, along with lifetime memberships in ISTE, IETE, and ISCA. Through his work, he continues to advance data-driven research with strong societal and industrial impact.
+                </p>
+              </div>
+            </div>
 
-      <article class="bio-card">
-        <img
-          src="https://conference.csd.amu.ac.in/images/ProfMNHoda.jpeg"
-          alt="Prof. M. N. Hoda"
-          class="bio-photo"
-        />
-        <div class="bio-content">
-          <h2 class="bio-name">Prof. M. N. Hoda</h2>
-          <div class="bio-designation">
-            (Director, Bharati Vidyapeeth’s Institute of Computer Applications &amp; Management (BVICAM), India)
-          </div>
-          <p class="bio-text">
-            Prof. M. N. Hoda is a distinguished academician and technology leader
-            with over 30 years of experience in computer science education,
-            research, and institutional development. He is currently Professor of
-            Computer Science and Founder Director of Bharati Vidyapeeth’s Institute
-            of Computer Applications &amp; Management (BVICAM), New Delhi, a position he
-            has held since 2002. He earned his MCA from Aligarh Muslim University
-            and a Ph.D. in Information System Audit, with research interests
-            spanning Information System Audit, Software Engineering, Artificial
-            Intelligence, Computer Networks, and ICT-enabled pedagogy. He has
-            published over 100 research papers, holds more than 20 patents, and has
-            authored and edited several books and conference volumes. He also serves
-            as the Founder Editor-in-Chief of the International Journal of
-            Information Technology (Springer, SCOPUS indexed). Prof. Hoda has
-            delivered over 250 keynote talks and contributed as a resource person in
-            more than 300 national and international academic events. He has held
-            several prestigious leadership positions, including Chairperson of IEEE
-            Delhi Section and National President (ICT Section) of the Indian Science
-            Congress Association. A Fellow and Senior Member of leading professional
-            bodies such as IEEE, ACM, CSI, and IETE, he has made significant
-            contributions to curriculum development and academic reforms across
-            universities in India. He is also a recipient of the Outstanding
-            Achievement Award and Best IT Teacher Award for his excellence in
-            teaching, research, and institution building.
-          </p>
-        </div>
-      </article>
+            <div class="bio-card">
+              <img alt="Dr. Iqbal H. Sarker" class="bio-photo" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.2s_WTFpZSWtAxrlTb5UHqQAAAA%3Fpid%3DApi&f=1&ipt=1698cf2f5bde0bfbdd0049aeeee2254bec255846a70860fa423749d85b4ff53b&ipo=images" />
+              <div class="bio-content">
+                <h2 class="bio-name">DR. IQBAL H. SARKER</h2>
+                <p class="bio-designation">(Research Fellow, Centre for Securing Digital Futures, Edith Cowan University, Australia)</p>
+                <p class="bio-text">
+                  Dr. Iqbal Hassan Sarker is a research fellow at the Centre for Securing Digital Futures, Edith Cowan University, and an Adjunct Fellow at the DigiSAS Lab, School of Computer Science, University of Technology Sydney. He earned his PhD in Computer Science from Swinburne University of Technology (Melbourne) in 2018. Dr Sarker’s research spans cybersecurity, AI and data-driven technologies, digital twins, and AI applications for business transformation and SMEs. He has published more than 100 peer-reviewed journal and conference papers in outlets such as Elsevier, Springer Nature, IEEE, ACM and Oxford University Press, and is lead author of two Springer Nature research monographs: Context-Aware Machine Learning and Mobile Data Analytics, and AI-Driven Cybersecurity and Threat Intelligence. His research impact has been recognized by ScholarGPS and by inclusion in the world’s top 2% of most-cited scientists (Elsevier/Stanford). He has worked with the Cyber Security Cooperative Research Centre and collaborated with CSIRO’s Data61 through academia–industry partnerships. Dr Sarker teaches and supervises across AI, machine learning, data science, database systems, project management and programming, and contributes to research leadership through editorial boards, conference program committees and postgraduate supervision. He is active in industry engagement and mentoring and is a member of ACM, IEEE and the Australian Information Security Association.
+                </p>
+              </div>
+            </div>
 
-      <article class="bio-card">
-        <img
-          src="https://i1.rgstatic.net/ii/profile.image/835645031329794-1576244709386_Q512/Maria-Lapina.jpg"
-          alt="Dr. Maria Lapina"
-          class="bio-photo"
-        />
-        <div class="bio-content">
-          <h2 class="bio-name">Dr. Maria Lapina</h2>
-          <div class="bio-designation">
-            (Associate Professor, North Caucasus Federal University, Russia)
-          </div>
-          <p class="bio-text">
-            Dr. Maria Lapina is an Associate Professor of the Department of
-            Computational Mathematics and Cybernetics at North Caucasus Federal
-            University, Stavropol, Russia. She has more than 20 years of teaching
-            experience. She received a PhD in mathematics from Stavropol State
-            University in 2005. She defended her master's thesis in Information
-            Security at the North Caucasus Federal University with honors in 2015.
-            Her research interests include Data Science, Machine Learning, Big Data,
-            Cybersecurity, Cryptography, Trusted Artificial Intelligence, Edu-Tech,
-            Teacher Education, &amp; Higher Ed. She has published in peer-reviewed
-            journals indexed in Scopus and WoS. She has more than 80 research
-            papers. She is an active editorial board member for Springer Nature, IGI
-            Global. She is an active reviewer of MDPI publishing journals. She is
-            the organizer, co-chair and editor of the proceedings of international
-            scientific events: AISMA-2021, 2022, 2023, 2024: International Workshop
-            on Advanced in Information Security Management and Applications,
-            DMAI-2021: International Workshop on Data Mining and AI. She has
-            participated in international internships at Sapienza University of Rome
-            (Italy) in 2018, the University of Ljubljana (Slovenia) in 2018, the
-            Technical University of Dresden (Germany) in 2019 and the 2nd ASEF
-            Innovation Laboratory of Higher Education (ASEFInnoLab) at Fudan
-            University in Shanghai, China in 2020.
-          </p>
-        </div>
-      </article>
+            <div class="bio-card">
+              <img alt="Prof. M. N. Hoda" class="bio-photo" src="https://conference.csd.amu.ac.in/images/ProfMNHoda.jpeg" />
+              <div class="bio-content">
+                <h2 class="bio-name">PROF. M. N. HODA</h2>
+                <p class="bio-designation">(Director, Bharati Vidyapeeth’s Institute of Computer Applications &amp; Management (BVICAM), India)</p>
+                <p class="bio-text">
+                  Prof. M. N. Hoda is a distinguished academician and technology leader with over 30 years of experience in computer science education, research, and institutional development. He is currently Professor of Computer Science and Founder Director of Bharati Vidyapeeth’s Institute of Computer Applications &amp; Management (BVICAM), New Delhi, a position he has held since 2002. He earned his MCA from Aligarh Muslim University and a Ph.D. in Information System Audit, with research interests spanning Information System Audit, Software Engineering, Artificial Intelligence, Computer Networks, and ICT-enabled pedagogy. He has published over 100 research papers, holds more than 20 patents, and has authored and edited several books and conference volumes. He also serves as the Founder Editor-in-Chief of the International Journal of Information Technology (Springer, SCOPUS indexed). Prof. Hoda has delivered over 250 keynote talks and contributed as a resource person in more than 300 national and international academic events. He has held several prestigious leadership positions, including Chairperson of IEEE Delhi Section and National President (ICT Section) of the Indian Science Congress Association. A Fellow and Senior Member of leading professional bodies such as IEEE, ACM, CSI, and IETE, he has made significant contributions to curriculum development and academic reforms across universities in India. He is also a recipient of the Outstanding Achievement Award and Best IT Teacher Award for his excellence in teaching, research, and institution building.
+                </p>
+              </div>
+            </div>
 
-      <article class="bio-card">
-        <img
-          src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=C6QYTEsAAAAJ&citpid=2"
-          alt="Dr. Shahid Tufail"
-          class="bio-photo"
-        />
-        <div class="bio-content">
-          <h2 class="bio-name">Dr. Shahid Tufail</h2>
-          <div class="bio-designation">
-            (Senior Data Scientist, NextNRG LLC, Florida, United States of America)
-          </div>
-          <div class="talk-box">
-            <strong>Title of the Talk:</strong><br />
-            <em>Building Telemetry Pipelines for Infrastructure and Performance Monitoring of Fabric Interconnects in Frontier Supercomputing</em>
-          </div>
-          <p class="bio-text">
-            Dr. Shahid Tufail is a Data Architect and Technology Lead with over 20
-            years of experience in designing large-scale data platforms and
-            real-time analytics systems. He specializes in telemetry data streaming,
-            distributed data architectures, and high-performance data engineering
-            across both cloud and on-premise environments. At Hewlett Packard
-            Enterprise (HPE), he has played a key role in developing high-velocity
-            observability platforms for HPC interconnects, including contributions
-            to the Frontier supercomputer ecosystem. He has been instrumental in
-            designing telemetry pipelines capable of processing millions of metrics
-            per minute, leveraging technologies such as Telegraf, Kafka,
-            VictoriaMetrics, TimescaleDB, OpenTelemetry, and OpenSearch to enable
-            real-time monitoring and performance analysis.
-          </p>
-        </div>
-      </article>
+            <div class="bio-card">
+              <img alt="Dr. Maria Lapina" class="bio-photo" src="https://i1.rgstatic.net/ii/profile.image/835645031329794-1576244709386_Q512/Maria-Lapina.jpg" />
+              <div class="bio-content">
+                <h2 class="bio-name">DR. MARIA LAPINA</h2>
+                <p class="bio-designation">(Associate Professor, North Caucasus Federal University, Russia)</p>
+                <p class="bio-text">
+                  Dr. Maria Lapina is an Associate Professor of the Department of Computational Mathematics and Cybernetics at North Caucasus Federal University, Stavropol, Russia. She has more than 20 years of teaching experience. She received a PhD in mathematics from Stavropol State University in 2005. She defended her master's thesis in Information Security at the North Caucasus Federal University with honors in 2015. Her research interests include Data Science, Machine Learning, Big Data, Cybersecurity, Cryptography, Trusted Artificial Intelligence, Edu-Tech, Teacher Education, &amp; Higher Ed. She has published in peer-reviewed journals indexed in Scopus and WoS. She has more than 80 research papers. She is an active editorial board member for Springer Nature, IGI Global. She is an active reviewer of MDPI publishing journals. She is the organizer, co-chair and editor of the proceedings of international scientific events: AISMA-2021, 2022, 2023, 2024: International Workshop on Advanced in Information Security Management and Applications, DMAI-2021: International Workshop on Data Mining and AI. She has participated in international internships at Sapienza University of Rome (Italy) in 2018, the University of Ljubljana (Slovenia) in 2018, the Technical University of Dresden (Germany) in 2019 and the 2nd ASEF Innovation Laboratory of Higher Education at Fudan University in Shanghai, China in 2020.
+                </p>
+              </div>
+            </div>
 
-      <article class="bio-card">
-        <img
-          src="https://conference.csd.amu.ac.in/images/mdSuhail.jpg"
-          alt="Mr. Mohammad Sohail"
-          class="bio-photo"
-        />
-        <div class="bio-content">
-          <h2 class="bio-name">Mr. Mohammad Sohail</h2>
-          <div class="bio-designation">
-            (Senior Specialist Data Engineering, LTIMindtree, United States of America)
-          </div>
-          <p class="bio-text">
-            Mr. Mohammad Sohail is a Data Architect and Technology Lead with over 20
-            years of experience in designing large-scale data platforms and
-            real-time analytics systems. An alumnus of Aligarh Muslim University, he
-            graduated in 2001 from the Computer Science Department (CSD). He
-            specializes in telemetry data streaming, distributed data architectures,
-            and high-performance data engineering across both cloud and on-premise
-            environments. At Hewlett Packard Enterprise (HPE), he played a key role
-            in developing a high-velocity observability platform for HPC
-            interconnects and the Frontier supercomputer. He was instrumental in
-            designing telemetry pipelines capable of processing millions of metrics
-            per minute. His work leverages advanced technologies such as Telegraf,
-            Kafka, VictoriaMetrics, TimescaleDB, OpenTelemetry, and OpenSearch to
-            enable real-time monitoring and performance analysis at scale.
-          </p>
-        </div>
-      </article>
+            <div class="bio-card">
+              <img alt="Dr. Shahid Tufail" class="bio-photo" src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=C6QYTEsAAAAJ&citpid=2" />
+              <div class="bio-content">
+                <h2 class="bio-name">DR. SHAHID TUFAIL</h2>
+                <p class="bio-designation">(Senior Data Scientist, NextNRG LLC, Florida, United States of America)</p>
+                <div class="talk-title">
+                  <strong>Title of the Talk:</strong><br />
+                  <em>Building Telemetry Pipelines for Infrastructure and Performance Monitoring of Fabric Interconnects in Frontier Supercomputing</em>
+                </div>
+                <p class="bio-text">
+                  Dr. Shahid Tufail is a Data Architect and Technology Lead with over 20 years of experience in designing large-scale data platforms and real-time analytics systems. He specializes in telemetry data streaming, distributed data architectures, and high-performance data engineering across both cloud and on-premise environments. At Hewlett Packard Enterprise (HPE), he has played a key role in developing high-velocity observability platforms for HPC interconnects, including contributions to the Frontier supercomputer ecosystem. He has been instrumental in designing telemetry pipelines capable of processing millions of metrics per minute, leveraging technologies such as Telegraf, Kafka, VictoriaMetrics, TimescaleDB, OpenTelemetry, and OpenSearch to enable real-time monitoring and performance analysis.
+                </p>
+              </div>
+            </div>
 
-      <article class="bio-card">
-        <img
-          src="https://conference.csd.amu.ac.in/images/aliPasha.png"
-          alt="Mr. Mehroz Ali Pasha"
-          class="bio-photo"
-        />
-        <div class="bio-content">
-          <h2 class="bio-name">Mr. Mehroz Ali Pasha</h2>
-          <div class="bio-designation">
-            (Founder &amp; CEO, AHA Technocrats, India)
-          </div>
-          <div class="talk-box">
-            <strong>Title of the Talk:</strong><br />
-            <em>From Code to Intelligence: How AI is Redefining Software Development and Industry Expectations</em>
-          </div>
-          <p class="bio-text">
-            Mr. Mehroz Ali Pasha is the Founder of AHA Technocrats, a Noida-based
-            software development and digital solutions company, and brings with him
-            over 14 years of extensive industry experience. Under his dynamic
-            leadership, the company has successfully delivered a wide range of
-            scalable web applications, SaaS platforms, and enterprise-grade
-            solutions across multiple domains, including the development of the
-            official website for Aligarh Muslim University. He completed his
-            graduation from Aligarh Muslim University, earned his MBA from HBTU
-            Kanpur, and further enhanced his expertise by pursuing a specialized
-            course in Supply Chain Management from IIT Kanpur. With a strong vision
-            for innovation and practical learning, he is actively committed to
-            bridging the gap between academic knowledge and industry requirements.
-            His work particularly emphasizes emerging areas such as AI-driven
-            development, modern software engineering practices, and real-world
-            application of technology solutions.
-          </p>
-        </div>
-      </article>
-    </main>          
-        </div>
-      </div>
-    </section>
- <div class="cmt-acknowledgment">
-  <p>
-    <strong>CMT Acknowledgment:</strong> The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
-  </p>
-</div>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container footer-links">
-        <a href="index.html">HOME</a>
-        |
-        <a href="https://www.amu.ac.in/" target="_blank">AMU Website</a>
-        |
-        <a
-          href="https://www.amu.ac.in/department/computer-science"
-          target="_blank"
-        >
-          Department of Computer Science
-        </a>
-        |
-        <a href="https://amu.ac.in/miscellaneous/iceci-2023" target="_blank">
-          ICECI 2023
-        </a>
-        |
-        <a href="https://privacy.ieee.org/policies" target="_blank">
-          IEEE PRIVACY POLICY
-        </a>
-      </div>
-      <div class="footer-text">
-        <p>© Copyright 2026 ICECI - All rights reserved.</p>
-      </div>
-      <a href="#" class="back-to-top">▲ Back to Top</a>
-    </footer>
+            <div class="bio-card">
+              <img alt="Mr. Mohammad Sohail" class="bio-photo" src="https://conference.csd.amu.ac.in/images/mdSuhail.jpg" />
+              <div class="bio-content">
+                <h2 class="bio-name">MR. MOHAMMAD SOHAIL</h2>
+                <p class="bio-designation">(Senior Specialist Data Engineering, LTIMindtree, United States of America)</p>
+                <p class="bio-text">
+                  Mr. Mohammad Sohail is a Data Architect and Technology Lead with over 20 years of experience in designing large-scale data platforms and real-time analytics systems. An alumnus of Aligarh Muslim University, he graduated in 2001 from the Computer Science Department (CSD). He specializes in telemetry data streaming, distributed data architectures, and high-performance data engineering across both cloud and on-premise environments. At Hewlett Packard Enterprise (HPE), he played a key role in developing a high-velocity observability platform for HPC interconnects and the Frontier supercomputer. He was instrumental in designing telemetry pipelines capable of processing millions of metrics per minute. His work leverages advanced technologies such as Telegraf, Kafka, VictoriaMetrics, TimescaleDB, OpenTelemetry, and OpenSearch to enable real-time monitoring and performance analysis at scale.
+                </p>
+              </div>
+            </div>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
-  </body>
+            <div class="bio-card">
+              <img alt="Mr. Mehroz Ali Pasha" class="bio-photo" src="https://conference.csd.amu.ac.in/images/aliPasha.png" />
+              <div class="bio-content">
+                <h2 class="bio-name">MR. MEHROZ ALI PASHA</h2>
+                <p class="bio-designation">(Founder &amp; CEO, AHA Technocrats, India)</p>
+                <div class="talk-title">
+                  <strong>Title of the Talk:</strong><br />
+                  <em>From Code to Intelligence: How AI is Redefining Software Development and Industry Expectations</em>
+                </div>
+                <p class="bio-text">
+                  Mr. Mehroz Ali Pasha is the Founder of AHA Technocrats, a Noida-based software development and digital solutions company, and brings with him over 14 years of extensive industry experience. Under his dynamic leadership, the company has successfully delivered a wide range of scalable web applications, SaaS platforms, and enterprise-grade solutions across multiple domains, including the development of the official website for Aligarh Muslim University. He completed his graduation from Aligarh Muslim University, earned his MBA from HBTU Kanpur, and further enhanced his expertise by pursuing a specialized course in Supply Chain Management from IIT Kanpur. With a strong vision for innovation and practical learning, he is actively committed to bridging the gap between academic knowledge and industry requirements. His work particularly emphasizes emerging areas such as AI-driven development, modern software engineering practices, and real-world application of technology solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="page-note">
+          For conference schedule, venue, registration, and updates, please visit the official ICECI 2026 website.
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuList = document.getElementById('menu-list');
+
+    if (menuToggle && menuList) {
+      menuToggle.addEventListener('click', function () {
+        menuList.classList.toggle('show');
+      });
+    }
+  </script>
+</body>
 </html>
