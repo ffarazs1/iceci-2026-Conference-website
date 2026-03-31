@@ -19,12 +19,13 @@
 
     * { box-sizing: border-box; }
 
+    /* ── Override external styles.css which sets body/container to max-width:1200px ── */
     html, body {
-      margin: 0;
-      padding: 0;
-      width: 100% ;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
       min-height: 100%;
-      max-width: 100%;
     }
 
     body {
@@ -33,31 +34,42 @@
       color: var(--iceci-text);
     }
 
-    .site-wrapper {
-      width: 100%;
-      max-width: 1600px;
-      margin: 0 auto;
-    }
-
+    /* Force full-width on header sections, overriding .container max-width */
     .top-bar,
     .main-header,
-    .menu-bar,
-    .page-center {
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
+    .menu-bar {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
 
+    .top-bar .container,
+    .main-header .container,
     .top-bar .top-links,
     .main-header .header-top {
       width: 100% !important;
-      max-width: 100% !important;
+      max-width: 1400px !important;
       margin-left: auto !important;
       margin-right: auto !important;
+      padding-left: 24px !important;
+      padding-right: 24px !important;
+    }
+
+    .site-wrapper {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+    }
+
+    .page-center {
+      width: 100%;
     }
 
     .menu-bar ul {
       width: 100%;
+      max-width: 100% !important;
       margin: 0 auto;
       padding-left: 0;
       padding-right: 0;
@@ -301,11 +313,6 @@
   <div class="page-center">
     <main class="main-content">
       <section class="content-panel">
-
-        <div class="section-head">
-          <h1>Invited Speaker Biographies</h1>
-          <p>Profiles of keynote, invited, and industry speakers participating in ICECI 2026.</p>
-        </div>
 
         <div class="bios-wrap">
 
