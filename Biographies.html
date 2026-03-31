@@ -1,283 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invited Speaker Biographies | ICECI 2026</title>
-  <style>
-    :root {
-      --primary: #0b4ea2;
-      --primary-dark: #07356f;
-      --accent: #f2b01e;
-      --bg: #f4f8fc;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #5f6b7a;
-      --border: #d9e4f0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICECI 2026 – Aligarh, India | 4-5 April 2026</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Top IEEE Bar -->
+    <div class="top-bar">
+      <div class="container top-links">
+        <a href="https://www.ieee.org/">IEEE.org</a>
+        |
+        <a href="https://ieeexplore.ieee.org/Xplore/home.jsp">
+          IEEE Xplore Digital Library
+        </a>
+        |
+        <a href="https://standards.ieee.org/">IEEE Standards</a>
+        |
+        <a href="https://spectrum.ieee.org/">IEEE Spectrum</a>
+        |
+        <a href="https://www.ieee.org/sitemap.html">More sites</a>
+      </div>
+    </div>
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
-    }
-
-    a { color: inherit; }
-
-    .top-strip {
-      background: var(--primary-dark);
-      color: #fff;
-      padding: 10px 16px;
-      font-size: 14px;
-      text-align: center;
-    }
-
-    .site-header {
-      background: linear-gradient(135deg, #0b4ea2 0%, #0d66c2 100%);
-      color: #fff;
-      padding: 18px 20px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
-    }
-
-    .header-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      color: #fff;
-    }
-
-    .brand img {
-      width: 62px;
-      height: 62px;
-      object-fit: contain;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.1);
-      padding: 6px;
-    }
-
-    .brand-text h1 {
-      margin: 0;
-      font-size: 28px;
-      line-height: 1.15;
-      font-weight: 700;
-    }
-
-    .brand-text p {
-      margin: 4px 0 0;
-      font-size: 15px;
-      opacity: 0.95;
-    }
-
-    .nav-bar {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .nav-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px 18px;
-      padding: 12px 16px;
-    }
-
-    .nav-inner a {
-      color: var(--primary-dark);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.02em;
-    }
-
-    .hero {
-      max-width: 1240px;
-      margin: 28px auto 16px;
-      padding: 0 20px;
-    }
-
-    .hero-card {
-      background: linear-gradient(180deg, #ffffff 0%, #f9fbfe 100%);
-      border: 1px solid var(--border);
-      border-left: 6px solid var(--accent);
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 8px 22px rgba(9, 52, 110, 0.08);
-    }
-
-    .hero-card h2 {
-      margin: 0 0 8px;
-      color: var(--primary-dark);
-      font-size: 34px;
-      line-height: 1.15;
-    }
-
-    .hero-card p {
-      margin: 0;
-      font-size: 17px;
-      color: var(--muted);
-    }
-
-    .bios {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 12px 20px 48px;
-      display: grid;
-      gap: 22px;
-    }
-
-    .container {
-      width: 100%;
-      margin: 0;
-      background: var(--card);
-      padding: 28px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 28px rgba(11, 78, 162, 0.08);
-      overflow: visible;
-      display: flex;
-      gap: 24px;
-      align-items: flex-start;
-    }
-
-    .bio-photo {
-      float: none;
-      flex: 0 0 170px;
-      width: 170px;
-      max-width: 170px;
-      height: 200px;
-      max-height: none;
-      margin: 0;
-      padding: 4px;
-      background-color: #fff;
-      border: 1px solid #cfd9e5;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      object-fit: cover;
-      display: block;
-    }
-
-    .bio-text {
-      font-size: 17px;
-      text-align: left;
-      hyphens: none;
-      overflow-wrap: break-word;
-      word-break: normal;
-      flex: 1 1 auto;
-      min-width: 0;
-    }
-
-    .name {
-      display: inline-block;
-      margin-bottom: 6px;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--primary-dark);
-      font-size: 26px;
-      line-height: 1.2;
-    }
-
-    .designation {
-      display: inline-block;
-      margin-bottom: 14px;
-      font-style: italic;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .talk-title {
-      display: block;
-      margin: 10px 0 14px;
-      padding: 12px 14px;
-      background: #f6f9fe;
-      border-left: 4px solid var(--accent);
-      border-radius: 10px;
-      font-size: 16px;
-      line-height: 1.5;
-    }
-
-    .talk-title strong { color: var(--primary-dark); }
-    .talk-title em { color: #223; font-style: italic; }
-
-    .footer-note {
-      max-width: 1240px;
-      margin: 0 auto 40px;
-      padding: 0 20px;
-      color: var(--muted);
-      font-size: 14px;
-      text-align: center;
-    }
-
-    @media (max-width: 900px) {
-      .container {
-        flex-direction: column;
-      }
-      .bio-photo {
-        width: 180px;
-        max-width: 100%;
-        height: 210px;
-      }
-      .hero-card h2 { font-size: 28px; }
-      .name { font-size: 22px; }
-    }
-
-    @media (max-width: 640px) {
-      .site-header { padding: 16px; }
-      .brand-text h1 { font-size: 22px; }
-      .brand-text p { font-size: 14px; }
-      .hero-card { padding: 20px; }
-      .hero-card h2 { font-size: 24px; }
-      .container { padding: 20px; }
-      .bio-text { font-size: 16px; }
-      .name { font-size: 20px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="top-strip">2nd International Conference on Emerging Computational Intelligence (ICECI 2026) | 4-5 April 2026 | Aligarh, India</div>
-
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="https://conference.csd.amu.ac.in/">
-        <img src="https://conference.csd.amu.ac.in/images/logo.png" alt="ICECI 2026 Logo" onerror="this.style.display='none'" />
-        <div class="brand-text">
-          <h1>ICECI 2026</h1>
-          <p>Department of Computer Science, Aligarh Muslim University</p>
+    <!-- Header -->
+    <header class="main-header">
+      <div class="container header-top">
+        <div class="logo-area">
+          <span class="conference-number">
+            2<sup>nd</sup>
+          </span>
+          <img class="skyline" src="images/icon.jpg" alt="logo" />
+          <div>
+            <div class="conference-title">
+              <span class="icecie">ICECI</span>
+              <span class="year">2026</span>
+            </div>
+            <div class="conference-date">4-5 April 2026 | Aligarh, India</div>
+          </div>
         </div>
-      </a>
-    </div>
-  </header>
+        <div class="right-icons">
+          <div class="search-container">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search ICECI'2026"
+            />
+            <button class="search-btn" aria-label="Search">
+              <img
+                src="https://img.icons8.com/ios-glyphs/20/00629B/search--v1.png"
+                alt="Search"
+                class="search-icon"
+              />
+            </button>
+          </div>
+          <div class="divider"></div>
+          <a href="https://www.ieee.org" target="_blank">
+            <img src="images/ieeeUP.png" alt="IEEE Logo" class="ieee-logo" />
+          </a>
+          <div class="divider"></div>
+          <a href="https://www.amu.ac.in" target="_blank">
+            <img src="images/logoAMU.png" alt="IEEE Logo" class="ieee-logo" />
+          </a>
+        </div>
+      </div>
+     <nav class="menu-bar">
+  <div class="menu-toggle" id="menu-toggle">
+    ☰ MENU
+  </div>
+  <ul id="menu-list">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="https://amu.ac.in/miscellaneous/iceci-2023">ICECI 2023</a></li>
+    <li><a href="index.html#COMMITTEE">COMMITTEE</a></li>
+    <li><a href="authors.html">AUTHORS</a></li>
+    <li><a href="registration.html">REGISTRATION</a></li>
+    <li><a href="index.html#venue">VENUE/TRAVEL</a></li>
+    <li><a href="index.html#contact">CONTACT US</a></li>
+  </ul>
+</nav>
 
-  <nav class="nav-bar">
-    <div class="nav-inner">
-      <a href="https://conference.csd.amu.ac.in/">HOME</a>
-      <a href="https://conference.csd.amu.ac.in/#committee">COMMITTEE</a>
-      <a href="https://conference.csd.amu.ac.in/#authors">AUTHORS</a>
-      <a href="https://conference.csd.amu.ac.in/#registration">REGISTRATION</a>
-      <a href="https://conference.csd.amu.ac.in/#venue">VENUE / TRAVEL</a>
-      <a href="https://conference.csd.amu.ac.in/conferenceSchedule.html">SCHEDULE</a>
-      <a href="https://conference.csd.amu.ac.in/#contact">CONTACT US</a>
-    </div>
-  </nav>
+    </header>
 
   <section class="hero">
     <div class="hero-card">
