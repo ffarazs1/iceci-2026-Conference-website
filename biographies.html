@@ -9,6 +9,94 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+      <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      margin: 0;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    .main-container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      display: flex;
+      gap: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .photo {
+      width: 140px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #003366;
+    }
+
+    .designation {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+
+    .bio {
+      font-size: 15px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .talk {
+      margin-top: 10px;
+      font-size: 15px;
+    }
+
+    .talk strong {
+      color: #000;
+    }
+
+    @media(max-width: 768px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .bio {
+        text-align: left;
+      }
+    }
+  </style>
   </head>
   <body>
     <!-- Top IEEE Bar -->
