@@ -1,200 +1,317 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ICECI 2026 – Aligarh, India | 4-5 April 2026</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-      <style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICECI 2026 – Invited Speaker Biographies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://conference.csd.amu.ac.in/styles.css" />
+  <style>
+    :root {
+      --iceci-blue: #0a5f97;
+      --iceci-deep: #003b5c;
+      --iceci-accent: #0c77b8;
+      --iceci-light: #eef7fc;
+      --iceci-border: #d6e7f2;
+      --iceci-text: #213547;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
       margin: 0;
-      background: #f5f7fb;
-      color: #222;
+      font-family: 'Roboto', Arial, sans-serif;
+      color: var(--iceci-text);
+      background:
+        linear-gradient(180deg, rgba(230, 243, 251, 0.78) 0%, rgba(248, 251, 253, 0.96) 22%, #f6f9fb 100%);
     }
 
-    .main-container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 0;
+    .page-wrap {
+      width: min(1240px, calc(100% - 32px));
+      margin: 0 auto;
     }
 
-    h1 {
-      text-align: center;
-      color: #003366;
-      margin-bottom: 40px;
+    .hero-strip {
+      position: relative;
+      overflow: hidden;
+      margin: 26px auto 28px;
+      border-radius: 18px;
+      background:
+        linear-gradient(135deg, rgba(0, 59, 92, 0.94), rgba(10, 95, 151, 0.9)),
+        url('https://conference.csd.amu.ac.in/images/conference.jpg') center/cover no-repeat;
+      color: #fff;
+      box-shadow: 0 14px 36px rgba(13, 65, 97, 0.16);
     }
 
-    .card {
+    .hero-strip::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,0.12), transparent 26%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      padding: 38px 42px;
+    }
+
+    .hero-kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero-inner h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 3vw, 2.9rem);
+      line-height: 1.15;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .hero-inner p {
+      margin: 0;
+      max-width: 900px;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .bios-grid {
+      padding-bottom: 40px;
+    }
+
+    .container {
       display: flex;
-      gap: 20px;
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 25px;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: 0.3s;
+      align-items: flex-start;
+      gap: 28px;
+      width: 100%;
+      margin: 0 0 24px;
+      padding: 28px 30px;
+      background: #fff;
+      border: 1px solid var(--iceci-border);
+      border-left: 6px solid var(--iceci-blue);
+      border-radius: 16px;
+      box-shadow: 0 10px 26px rgba(15, 66, 98, 0.08);
+      overflow: visible;
     }
 
-    .card:hover {
-      transform: translateY(-3px);
+    .container:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(15, 66, 98, 0.12);
+      transition: all 0.2s ease;
     }
 
-    .photo {
-      width: 140px;
-      height: 160px;
+    .bio-photo {
+      float: none;
+      flex: 0 0 180px;
+      width: 180px;
+      height: 210px;
+      max-height: none;
+      margin: 0;
       object-fit: cover;
-      border-radius: 6px;
-      border: 1px solid #ddd;
+      border-radius: 12px;
+      border: 3px solid #f2f7fb;
+      box-shadow: 0 6px 18px rgba(15, 66, 98, 0.12);
+      background: #fff;
     }
 
-    .content {
-      flex: 1;
+    .bio-text {
+      flex: 1 1 auto;
+      min-width: 0;
+      font-size: 16px;
+      line-height: 1.82;
+      text-align: left;
+      hyphens: none;
+      word-break: normal;
+      overflow-wrap: break-word;
     }
 
     .name {
-      font-size: 20px;
-      font-weight: 700;
-      color: #003366;
+      display: inline-block;
+      margin-bottom: 4px;
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      text-transform: none;
+      color: var(--iceci-deep);
     }
 
     .designation {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 10px;
-      font-style: italic;
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #5b7383;
+      font-size: 0.98rem;
+      font-style: normal;
+      font-weight: 500;
     }
 
-    .bio {
-      font-size: 15px;
-      line-height: 1.6;
-      text-align: justify;
+    .talk-title {
+      margin: 14px 0 12px;
+      padding: 12px 16px;
+      border-left: 4px solid var(--iceci-accent);
+      background: var(--iceci-light);
+      border-radius: 10px;
+      font-size: 0.98rem;
+      line-height: 1.65;
     }
 
-    .talk {
-      margin-top: 10px;
-      font-size: 15px;
+    .talk-title strong {
+      color: var(--iceci-deep);
     }
 
-    .talk strong {
-      color: #000;
+    .section-note {
+      text-align: center;
+      margin: 0 auto 28px;
+      color: #526b7b;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      max-width: 920px;
     }
 
-    @media(max-width: 768px) {
-      .card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .footer-note {
+      margin: 14px auto 40px;
+      padding: 16px 20px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid var(--iceci-border);
+      text-align: center;
+      color: #526b7b;
+      box-shadow: 0 8px 18px rgba(15, 66, 98, 0.06);
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        padding: 28px 22px;
       }
 
-      .bio {
-        text-align: left;
+      .container {
+        gap: 20px;
+        padding: 22px;
+      }
+
+      .bio-photo {
+        flex-basis: 150px;
+        width: 150px;
+        height: 180px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .page-wrap {
+        width: min(100% - 18px, 1240px);
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 18px;
+      }
+
+      .bio-photo {
+        width: 165px;
+        height: 195px;
+      }
+
+      .bio-text {
+        width: 100%;
+        font-size: 15.4px;
+        line-height: 1.74;
+      }
+
+      .name, .designation {
+        text-align: center;
+        width: 100%;
       }
     }
   </style>
-  </head>
-  <body>
-    <!-- Top IEEE Bar -->
-    <div class="top-bar">
-      <div class="container top-links">
-        <a href="https://www.ieee.org/">IEEE.org</a>
-        |
-        <a href="https://ieeexplore.ieee.org/Xplore/home.jsp">
-          IEEE Xplore Digital Library
-        </a>
-        |
-        <a href="https://standards.ieee.org/">IEEE Standards</a>
-        |
-        <a href="https://spectrum.ieee.org/">IEEE Spectrum</a>
-        |
-        <a href="https://www.ieee.org/sitemap.html">More sites</a>
-      </div>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container top-links" style="display:block; width:100%; max-width:none; margin:0; padding:8px 16px; background:none; border:none; box-shadow:none; border-radius:0;">
+      <a href="https://www.ieee.org/">IEEE.org</a> |
+      <a href="https://ieeexplore.ieee.org/Xplore/home.jsp">IEEE Xplore Digital Library</a> |
+      <a href="https://standards.ieee.org/">IEEE Standards</a> |
+      <a href="https://spectrum.ieee.org/">IEEE Spectrum</a> |
+      <a href="https://www.ieee.org/sitemap.html">More sites</a>
     </div>
-
-    <!-- Header -->
-    <header class="main-header">
-      <div class="container header-top">
-        <div class="logo-area">
-          <span class="conference-number">
-            2<sup>nd</sup>
-          </span>
-          <img class="skyline" src="images/icon.jpg" alt="logo" />
-          <div>
-            <div class="conference-title">
-              <span class="icecie">ICECI</span>
-              <span class="year">2026</span>
-            </div>
-            <div class="conference-date">4-5 April 2026 | Aligarh, India</div>
-          </div>
-        </div>
-        <div class="right-icons">
-          <div class="search-container">
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Search ICECI'2026"
-            />
-            <button class="search-btn" aria-label="Search">
-              <img
-                src="https://img.icons8.com/ios-glyphs/20/00629B/search--v1.png"
-                alt="Search"
-                class="search-icon"
-              />
-            </button>
-          </div>
-          <div class="divider"></div>
-          <a href="https://www.ieee.org" target="_blank">
-            <img src="images/ieeeUP.png" alt="IEEE Logo" class="ieee-logo" />
-          </a>
-          <div class="divider"></div>
-          <a href="https://www.amu.ac.in" target="_blank">
-            <img src="images/logoAMU.png" alt="IEEE Logo" class="ieee-logo" />
-          </a>
-        </div>
-      </div>
-     <nav class="menu-bar">
-  <div class="menu-toggle" id="menu-toggle">
-    ☰ MENU
   </div>
-  <ul id="menu-list">
-    <li><a href="index.html">HOME</a></li>
-    <li><a href="https://amu.ac.in/miscellaneous/iceci-2023">ICECI 2023</a></li>
-    <li><a href="index.html#COMMITTEE">COMMITTEE</a></li>
-    <li><a href="authors.html">AUTHORS</a></li>
-    <li><a href="registration.html">REGISTRATION</a></li>
-    <li><a href="index.html#venue">VENUE/TRAVEL</a></li>
-    <li><a href="index.html#contact">CONTACT US</a></li>
-  </ul>
-</nav>
 
-    </header>
-
-  <section class="hero">
-    <div class="hero-card">
-      <h2>Invited Speaker Biographies</h2>
-      <p>Profiles of keynote, invited, and industry speakers participating in ICECI 2026. This page follows the conference website theme and uses a wider content layout so each biography displays fully without unnecessary wrapping.</p>
+  <header class="main-header">
+    <div class="container header-top" style="width:100%; max-width:none; margin:0; border:none; border-radius:0; box-shadow:none; padding:0;">
+      <div class="logo-area">
+        <span class="conference-number">2<sup>nd</sup></span>
+        <img class="skyline" src="https://conference.csd.amu.ac.in/images/icon.jpg" alt="ICECI logo" />
+        <div>
+          <div class="conference-title"><span class="icecie">ICECI</span><span class="year">2026</span></div>
+          <div class="conference-date">4-5 April 2026 | Aligarh, India</div>
+        </div>
+      </div>
+      <div class="right-icons">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search ICECI'2026" />
+          <button class="search-btn" aria-label="Search">
+            <img src="https://img.icons8.com/ios-glyphs/20/00629B/search--v1.png" alt="Search" class="search-icon" />
+          </button>
+        </div>
+        <div class="divider"></div>
+        <a href="https://www.ieee.org" target="_blank"><img src="https://conference.csd.amu.ac.in/images/ieeeUP.png" alt="IEEE Logo" class="ieee-logo" /></a>
+        <div class="divider"></div>
+        <a href="https://www.amu.ac.in" target="_blank"><img src="https://conference.csd.amu.ac.in/images/logoAMU.png" alt="AMU Logo" class="ieee-logo" /></a>
+      </div>
     </div>
-  </section>
 
-  <main class="bios">
-    <!-- PERSON 1: PROF. ABDUL QUAIYUM ANSARI -->
-    <div class="container">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYWY_q1188ygKSVwZGXmIsDKd_exIBJaYNjw&s"
-        alt="Prof. Abdul Quaiyum Ansari"
-        class="bio-photo"
-      />
-      <div class="bio-text">
-        <span class="name">DR. ABDUL QUAIYUM ANSARI</span> <br />
-        <span class="designation"
-          >(Professor, Department of Electrical Engineering, Jamia Millia
-          Islamia, India)</span
-        ><br />
+    <nav class="menu-bar">
+      <div class="menu-toggle" id="menu-toggle">☰ MENU</div>
+      <ul id="menu-list">
+        <li><a href="https://conference.csd.amu.ac.in/index.html">HOME</a></li>
+        <li><a href="https://amu.ac.in/miscellaneous/iceci-2023">ICECI 2023</a></li>
+        <li><a href="https://conference.csd.amu.ac.in/index.html#COMMITTEE">COMMITTEE</a></li>
+        <li><a href="https://conference.csd.amu.ac.in/authors.html">AUTHORS</a></li>
+        <li><a href="https://conference.csd.amu.ac.in/registration.html">REGISTRATION</a></li>
+        <li><a href="https://conference.csd.amu.ac.in/index.html#venue">VENUE/TRAVEL</a></li>
+        <li><a href="https://conference.csd.amu.ac.in/index.html#contact">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-wrap">
+    <section class="hero-strip">
+      <div class="hero-inner">
+        <span class="hero-kicker">ICECI 2026</span>
+        <h1>Invited Speaker Biographies</h1>
+        <p>
+          Profiles of keynote, invited, and industry speakers participating in the
+          2<sup>nd</sup> International Conference on Emerging Computational Intelligence.
+          The page has been aligned with the conference website theme and widened so
+          biography text displays naturally without cramped wrapping.
+        </p>
+      </div>
+    </section>
+
+    <p class="section-note">
+      Official conference branding, navigation structure, and visual tone are aligned with the
+      ICECI homepage, including the same header hierarchy, blue conference palette, and venue-style
+      clean card presentation.
+    </p>
+
+    <main class="bios-grid">
+      <div class="container">
+<img alt="Prof. Abdul Quaiyum Ansari" class="bio-photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYWY_q1188ygKSVwZGXmIsDKd_exIBJaYNjw&amp;s"/>
+<div class="bio-text">
+<span class="name">DR. ABDUL QUAIYUM ANSARI</span> <br/>
+<span class="designation">(Professor, Department of Electrical Engineering, Jamia Millia
+          Islamia, India)</span><br/>
         Dr. Abdul Quaiyum Ansari is a Professor in the Department of Electrical
         Engineering at Jamia Millia Islamia, New Delhi. He holds a B.Sc. (Engg.)
         from Aligarh Muslim University, M.Tech. from IIT Delhi, and a Ph.D. in
@@ -214,21 +331,14 @@
         and excellence in teaching, he continues to contribute significantly to
         research, innovation, and engineering education.
       </div>
-    </div>
+</div>
 
-    <!-- PERSON 2: DAG ØIVIND MADSEN -->
-    <div class="container">
-      <img
-        src="https://conference.csd.amu.ac.in/images/dag.jpeg"
-        alt="No image available"
-        class="bio-photo"
-      />
-      <div class="bio-text">
-        <span class="name">PROF. DAG ØIVIND MADSEN</span><br />
-        <span class="designation"
-          >(Professor, Department of Business, Marketing and Law, USN School of
-          Business, Norway.)</span
-        ><br />
+<div class="container">
+<img alt="No image available" class="bio-photo" src="https://conference.csd.amu.ac.in/images/dag.jpeg"/>
+<div class="bio-text">
+<span class="name">PROF. DAG ØIVIND MADSEN</span><br/>
+<span class="designation">(Professor, Department of Business, Marketing and Law, USN School of
+          Business, Norway.)</span><br/>
         Prof. Dag Øivind Madsen is a Professor at the University of
         South-Eastern Norway, School of Business, recognized for integrating
         rigorous scholarship with impactful teaching and academic leadership.
@@ -244,21 +354,14 @@
         to translate research into real-world impact. Prof. Madsen continues to
         contribute meaningfully to advancing business scholarship and practice.
       </div>
-    </div>
+</div>
 
-    <!--  DR. M. ABULAISH -->
-    <div class="container">
-      <img
-        src="https://people.sau.int/uploads/1727018093.jpg"
-        alt="No image available"
-        class="bio-photo"
-      />
-      <div class="bio-text">
-        <span class="name">PROF. MUHAMMAD ABULAISH</span><br />
-        <span class="designation"
-          >(Professor, Department of Computer Science, South Asian University,
-          India)</span
-        ><br />
+<div class="container">
+<img alt="No image available" class="bio-photo" src="https://people.sau.int/uploads/1727018093.jpg"/>
+<div class="bio-text">
+<span class="name">PROF. MUHAMMAD ABULAISH</span><br/>
+<span class="designation">(Professor, Department of Computer Science, South Asian University,
+          India)</span><br/>
         Prof. M. Abulaish is a Professor of Computer Science at South Asian
         University, New Delhi, with over 26 years of distinguished experience in
         academia and research. He has been serving at SAU since 2016 and has
@@ -281,21 +384,14 @@
         memberships in ISTE, IETE, and ISCA. Through his work, he continues to
         advance data-driven research with strong societal and industrial impact.
       </div>
-    </div>
+</div>
 
-    <!--  DR. IQBAL H. SARKER -->
-    <div class="container">
-      <img
-        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.2s_WTFpZSWtAxrlTb5UHqQAAAA%3Fpid%3DApi&f=1&ipt=1698cf2f5bde0bfbdd0049aeeee2254bec255846a70860fa423749d85b4ff53b&ipo=images"
-        alt="No image available"
-        class="bio-photo"
-      />
-      <div class="bio-text">
-        <span class="name">DR. IQBAL H. SARKER</span><br />
-        <span class="designation"
-          >(Research Fellow, Centre for Securing Digital Futures, Edith Cowan
-          University, Australia)</span
-        ><br />
+<div class="container">
+<img alt="No image available" class="bio-photo" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.2s_WTFpZSWtAxrlTb5UHqQAAAA%3Fpid%3DApi&amp;f=1&amp;ipt=1698cf2f5bde0bfbdd0049aeeee2254bec255846a70860fa423749d85b4ff53b&amp;ipo=images"/>
+<div class="bio-text">
+<span class="name">DR. IQBAL H. SARKER</span><br/>
+<span class="designation">(Research Fellow, Centre for Securing Digital Futures, Edith Cowan
+          University, Australia)</span><br/>
         Dr. Iqbal Hassan Sarker is a research fellow at the Centre for Securing
         Digital Futures, Edith Cowan University, and an Adjunct Fellow at the
         DigiSAS Lab, School of Computer Science, University of Technology
@@ -319,26 +415,19 @@
         (including IMNIS) and is a member of ACM, IEEE and the Australian
         Information Security Association.
       </div>
-    </div>
+</div>
 
-    <!--  Prof. M. N. Hoda -->
-    <div class="container">
-      <img
-        src="https://conference.csd.amu.ac.in/images/ProfMNHoda.jpeg"
-        alt="Dr. Maria Lapina"
-        class="bio-photo"
-      />
-      <div class="bio-text">
-        <span class="name">PROF. M. N. HODA</span><br />
-        <span class="designation"
-          >(Director, Bharati Vidyapeeth’s Institute of Computer Applications &
-          Management (BVICAM), India)</span
-        ><br />
+<div class="container">
+<img alt="Dr. Maria Lapina" class="bio-photo" src="https://conference.csd.amu.ac.in/images/ProfMNHoda.jpeg"/>
+<div class="bio-text">
+<span class="name">PROF. M. N. HODA</span><br/>
+<span class="designation">(Director, Bharati Vidyapeeth’s Institute of Computer Applications &amp;
+          Management (BVICAM), India)</span><br/>
         Prof. M. N. Hoda is a distinguished academician and technology leader
         with over 30 years of experience in computer science education,
         research, and institutional development. He is currently Professor of
         Computer Science and Founder Director of Bharati Vidyapeeth’s Institute
-        of Computer Applications & Management (BVICAM), New Delhi, a position he
+        of Computer Applications &amp; Management (BVICAM), New Delhi, a position he
         has held since 2002. He earned his MCA from Aligarh Muslim University
         and a Ph.D. in Information System Audit, with research interests
         spanning Information System Audit, Software Engineering, Artificial
@@ -358,21 +447,14 @@
         Achievement Award and Best IT Teacher Award for his excellence in
         teaching, research, and institution building.
       </div>
-    </div>
+</div>
 
-    <!-- PERSON 4: DR. MARIA LAPINA -->
-    <div class="container">
-      <img
-        src="https://i1.rgstatic.net/ii/profile.image/835645031329794-1576244709386_Q512/Maria-Lapina.jpg"
-        alt="Dr. Maria Lapina"
-        class="bio-photo"
-      />
-      <div class="bio-text">
-        <span class="name">DR. MARIA LAPINA</span><br />
-        <span class="designation"
-          >(Associate Professor, North Caucasus Federal University,
-          Russia)</span
-        ><br />
+<div class="container">
+<img alt="Dr. Maria Lapina" class="bio-photo" src="https://i1.rgstatic.net/ii/profile.image/835645031329794-1576244709386_Q512/Maria-Lapina.jpg"/>
+<div class="bio-text">
+<span class="name">DR. MARIA LAPINA</span><br/>
+<span class="designation">(Associate Professor, North Caucasus Federal University,
+          Russia)</span><br/>
         Dr. Maria Lapina is an Associate Professor of the Department of
         Computational Mathematics and Cybernetics at North Caucasus Federal
         University, Stavropol, Russia. She has more than 20 years of teaching
@@ -381,7 +463,7 @@
         Security at the North Caucasus Federal University with honors in 2015.
         Her research interests include Data Science, Machine Learning, Big Data,
         Cybersecurity, Cryptography, Trusted Artificial Intelligence, Edu-Tech,
-        Teacher Education, & Higher Ed. She has published in peer-reviewed
+        Teacher Education, &amp; Higher Ed. She has published in peer-reviewed
         journals indexed in Scopus and WoS. She has more than 80 research
         papers. She is an active editorial board member for Springer Nature, IGI
         Global. She is an active reviewer of MDPI publishing journals. She is
@@ -395,31 +477,21 @@
         Innovation Laboratory of Higher Education (ASEFInnoLab) at Fudan
         University in Shanghai, China in 2020.
       </div>
-    </div>
+</div>
 
-    <!-- PERSON 11: DR. SHAHID TUFAIL -->
-    <div class="container">
-      <img
-        src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=C6QYTEsAAAAJ&citpid=2"
-        alt="Dr. Shahid Tufail"
-        class="bio-photo"
-      />
-      <div class="bio-text">
-        <span class="name">DR. SHAHID TUFAIL</span><br />
-        <span class="designation"
-          >(Senior Data Scientist, NextNRG LLC, Florida, United States of
-          America)</span
-        ><br />
-
-        <p class="talk-title">
-          <strong>Title of the Talk:</strong><br />
-          <span>
-            <i
-              >Building Telemetry Pipelines for Infrastructure and Performance
-              Monitoring of Fabric Interconnects in Frontier Supercomputing</i
-            >
-          </span>
-        </p>
+<div class="container">
+<img alt="Dr. Shahid Tufail" class="bio-photo" src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&amp;user=C6QYTEsAAAAJ&amp;citpid=2"/>
+<div class="bio-text">
+<span class="name">DR. SHAHID TUFAIL</span><br/>
+<span class="designation">(Senior Data Scientist, NextNRG LLC, Florida, United States of
+          America)</span><br/>
+<p class="talk-title">
+<strong>Title of the Talk:</strong><br/>
+<span>
+<i>Building Telemetry Pipelines for Infrastructure and Performance
+              Monitoring of Fabric Interconnects in Frontier Supercomputing</i>
+</span>
+</p>
 
         Dr. Shahid Tufail is a Data Architect and Technology Lead with over 20
         years of experience in designing large-scale data platforms and
@@ -434,21 +506,14 @@
         VictoriaMetrics, TimescaleDB, OpenTelemetry, and OpenSearch to enable
         real-time monitoring and performance analysis.
       </div>
-    </div>
+</div>
 
-    <!-- PERSON 13: Mohammad Sohail-->
-    <div class="container">
-      <img
-        src="https://conference.csd.amu.ac.in/images/mdSuhail.jpg"
-        alt="No image available"
-        class="bio-photo"
-      />
-      <div class="bio-text">
-        <span class="name">MR. MOHAMMAD SOHAIL</span><br />
-        <span class="designation"
-          >(Senior Specialist Data Engineering, LTIMindtree, United States of
-          America )</span
-        ><br />
+<div class="container">
+<img alt="No image available" class="bio-photo" src="https://conference.csd.amu.ac.in/images/mdSuhail.jpg"/>
+<div class="bio-text">
+<span class="name">MR. MOHAMMAD SOHAIL</span><br/>
+<span class="designation">(Senior Specialist Data Engineering, LTIMindtree, United States of
+          America )</span><br/>
         Mr. Mohammad Sohail is a Data Architect and Technology Lead with over 20
         years of experience in designing large-scale data platforms and
         real-time analytics systems. An alumnus of Aligarh Muslim University, he
@@ -463,29 +528,20 @@
         Kafka, VictoriaMetrics, TimescaleDB, OpenTelemetry, and OpenSearch to
         enable real-time monitoring and performance analysis at scale.
       </div>
-    </div>
+</div>
 
-    <!-- PERSON 6: MEHROZ ALI PASHA -->
-    <div class="container">
-      <img
-        src="https://conference.csd.amu.ac.in/images/aliPasha.png"
-        alt="No image available"
-        class="bio-photo"
-      />
-      <div class="bio-text">
-        <span class="name">MR. MEHROZ ALI PASHA</span><br />
-        <span class="designation">(Founder & CEO, AHA Technocrats, India)</span
-        ><br />
-
-        <p class="talk-title">
-          <strong>Title of the Talk:</strong><br />
-          <span>
-            <i
-              >From Code to Intelligence: How AI is Redefining Software
-              Development and Industry Expectations</i
-            >
-          </span>
-        </p>
+<div class="container">
+<img alt="No image available" class="bio-photo" src="https://conference.csd.amu.ac.in/images/aliPasha.png"/>
+<div class="bio-text">
+<span class="name">MR. MEHROZ ALI PASHA</span><br/>
+<span class="designation">(Founder &amp; CEO, AHA Technocrats, India)</span><br/>
+<p class="talk-title">
+<strong>Title of the Talk:</strong><br/>
+<span>
+<i>From Code to Intelligence: How AI is Redefining Software
+              Development and Industry Expectations</i>
+</span>
+</p>
         Mr. Mehroz Ali Pasha is the Founder of AHA Technocrats, a Noida-based
         software development and digital solutions company, and brings with him
         over 14 years of extensive industry experience. Under his dynamic
@@ -502,11 +558,22 @@
         development, modern software engineering practices, and real-world
         application of technology solutions.
       </div>
+</div>
+    </main>
+
+    <div class="footer-note">
+      For conference schedule, venue details, registration, and updates, please visit the official ICECI 2026 website.
     </div>
+  </div>
 
-
-  </main>
-
-  <div class="footer-note">For conference details, schedule, and updates, visit the official ICECI 2026 website.</div>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuList = document.getElementById('menu-list');
+    if (menuToggle && menuList) {
+      menuToggle.addEventListener('click', function () {
+        menuList.classList.toggle('show');
+      });
+    }
+  </script>
 </body>
 </html>
