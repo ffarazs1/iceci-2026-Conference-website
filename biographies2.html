@@ -1,99 +1,513 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ICECI 2026 – Aligarh, India | 04-05 April 2026</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Top IEEE Bar -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICECI 2026 – Invited Speaker Biographies</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #dfe8ef;
+      color: #16354c;
+      font-family: "Roboto", Arial, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .site-shell {
+      width: min(96%, 1200px);
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      background: #d7e3eb;
+      color: #005b8f;
+      font-size: 13px;
+      line-height: 1.4;
+      padding: 12px 20px;
+    }
+
+    .top-bar a {
+      color: #005b8f;
+    }
+
+    .main-header {
+      background: #ffffff;
+    }
+
+    .header-row {
+      min-height: 116px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand-block {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+
+    .edition {
+      color: #f06c00;
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .round-logo {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex: 0 0 auto;
+    }
+
+    .title-stack {
+      min-width: 0;
+    }
+
+    .conference-title {
+      margin: 0;
+      line-height: 1;
+      font-size: 34px;
+      font-weight: 800;
+      color: #005b8f;
+      white-space: nowrap;
+    }
+
+    .conference-title .year {
+      color: #f06c00;
+    }
+
+    .conference-date {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #005b8f;
+    }
+
+    .partner-logos {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 16px;
+      flex: 0 0 auto;
+    }
+
+    .v-sep {
+      width: 1px;
+      height: 32px;
+      background: #c8d2dc;
+    }
+
+    .ieee-logo {
+      height: 60px;
+      width: auto;
+    }
+
+    .amu-logo {
+      height: 68px;
+      width: auto;
+    }
+
+    .menu-bar {
+      background: #005f97;
+    }
+
+    .menu-list {
+      list-style: none;
+      margin: 0;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .menu-list li {
+      margin: 0;
+    }
+
+    .menu-list a {
+      display: block;
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 16px 18px;
+      text-transform: uppercase;
+    }
+
+    .menu-list a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-wrap,
+    .note-wrap,
+    .content-wrap,
+    .footer-wrap {
+      width: 100%;
+    }
+
+    .hero {
+      margin: 28px 0 24px;
+      padding: 36px 42px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #164d72 0%, #0d6398 60%, #4d8ebb 100%);
+      color: #ffffff;
+      box-shadow: 0 10px 28px rgba(22, 63, 95, 0.14);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 950px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.98);
+    }
+
+    .section-note {
+      width: min(92%, 980px);
+      margin: 0 auto 28px;
+      text-align: center;
+      color: #4d6d88;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    .bios {
+      padding-bottom: 24px;
+    }
+
+    .bio-card {
+      display: flex;
+      gap: 26px;
+      align-items: flex-start;
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 22px;
+      border: 1px solid #bfd4e2;
+      border-left: 6px solid #0c6aa1;
+      box-shadow: 0 6px 18px rgba(24, 65, 94, 0.08);
+    }
+
+    .bio-photo {
+      width: 176px;
+      min-width: 176px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 14px;
+      background: #eef3f7;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .bio-content {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .bio-name {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.25;
+      font-weight: 800;
+      color: #004d7a;
+      text-transform: uppercase;
+    }
+
+    .bio-designation {
+      margin: 0 0 16px;
+      color: #5e758a;
+      font-size: 15px;
+      line-height: 1.6;
+      font-weight: 700;
+    }
+
+    .talk-box {
+      margin: 0 0 16px;
+      padding: 13px 16px;
+      background: #eef6fb;
+      border-left: 4px solid #0c6aa1;
+      border-radius: 10px;
+      color: #274e68;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .talk-box strong {
+      color: #003e63;
+    }
+
+    .bio-text {
+      color: #16354c;
+      font-size: 16px;
+      line-height: 1.82;
+      text-align: justify;
+      margin: 0;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #4d6d88;
+      font-size: 15px;
+      line-height: 1.7;
+      padding: 8px 0 36px;
+    }
+
+    @media (max-width: 1024px) {
+      .header-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .partner-logos {
+        justify-content: center;
+      }
+
+      .brand-block {
+        justify-content: center;
+      }
+
+      .conference-title,
+      .conference-date {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        padding: 28px 22px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .bio-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 22px 18px;
+      }
+
+      .bio-photo {
+        width: 170px;
+        min-width: 170px;
+        height: 204px;
+      }
+
+      .bio-content {
+        width: 100%;
+      }
+
+      .bio-name,
+      .bio-designation {
+        text-align: center;
+      }
+
+      .bio-text {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .site-shell {
+        width: min(98%, 1200px);
+      }
+
+      .top-bar {
+        padding: 10px 14px;
+      }
+
+      .header-row {
+        padding: 14px 14px 12px;
+      }
+
+      .edition {
+        font-size: 30px;
+      }
+
+      .round-logo {
+        width: 56px;
+        height: 56px;
+      }
+
+      .conference-title {
+        font-size: 28px;
+        white-space: normal;
+      }
+
+      .conference-date {
+        font-size: 14px;
+      }
+
+      .partner-logos {
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .ieee-logo {
+        height: 42px;
+      }
+
+      .amu-logo {
+        height: 52px;
+      }
+
+      .menu-list {
+        justify-content: flex-start;
+      }
+
+      .menu-list a {
+        padding: 13px 14px;
+        font-size: 14px;
+      }
+
+      .hero {
+        margin-top: 20px;
+      }
+
+      .hero h1 {
+        font-size: 27px;
+      }
+
+      .hero p,
+      .bio-text {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
     <div class="top-bar">
-      <div class="container top-links">
-        <a href="https://www.ieee.org/">IEEE.org</a>
-        |
-        <a href="https://ieeexplore.ieee.org/Xplore/home.jsp">
-          IEEE Xplore Digital Library
-        </a>
-        |
-        <a href="https://standards.ieee.org/">IEEE Standards</a>
-        |
-        <a href="https://spectrum.ieee.org/">IEEE Spectrum</a>
-        |
-        <a href="https://www.ieee.org/sitemap.html">More sites</a>
-      </div>
+      <a href="https://www.ieee.org/" target="_blank" rel="noopener">IEEE.org</a>
+      |
+      <a href="https://ieeexplore.ieee.org/Xplore/home.jsp" target="_blank" rel="noopener">IEEE Xplore Digital Library</a>
+      |
+      <a href="https://standards.ieee.org/" target="_blank" rel="noopener">IEEE Standards</a>
+      |
+      <a href="https://spectrum.ieee.org/" target="_blank" rel="noopener">IEEE Spectrum</a>
+      |
+      <a href="https://www.ieee.org/sitemap.html" target="_blank" rel="noopener">More sites</a>
     </div>
 
-    <!-- Header -->
-    <!-- Header -->
     <header class="main-header">
-      <div class="container header-top">
-        <div class="logo-area">
-          <span class="conference-number">
-            2
-            <sup>nd</sup>
-          </span>
-          <img class="skyline" src="images/logo2.jpeg" alt="logo" />
-          <div>
+      <div class="header-row">
+        <div class="brand-block">
+          <div class="edition">2<sup>nd</sup></div>
+          <img
+            src="https://conference.csd.amu.ac.in/images/icon.jpg"
+            alt="ICECI 2026 Logo"
+            class="round-logo"
+          />
+          <div class="title-stack">
             <div class="conference-title">
-              <span class="icecie">ICECI</span>
-              <span class="year">2026</span>
+              ICECI<span class="year">2026</span>
             </div>
             <div class="conference-date">4-5 April 2026 | Aligarh, India</div>
           </div>
         </div>
-        <div class="right-icons">
-          <div class="search-container">
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Search ICECI'2026"
+
+        <div class="partner-logos">
+          <div class="v-sep"></div>
+          <a href="https://www.ieee.org/" target="_blank" rel="noopener">
+            <img
+              src="https://conference.csd.amu.ac.in/images/ieeeUP.png"
+              alt="IEEE UP Section"
+              class="ieee-logo"
             />
-            <button class="search-btn" aria-label="Search">
-              <img
-                src="https://img.icons8.com/ios-glyphs/20/00629B/search--v1.png"
-                alt="Search"
-                class="search-icon"
-              />
-            </button>
-          </div>
-          <div class="divider"></div>
-          <a href="https://www.ieee.org" target="_blank">
-            <img src="images/ieeeUP.png" alt="IEEE Logo" class="ieee-logo" />
           </a>
-          <div class="divider"></div>
-          <a href="https://www.amu.ac.in" target="_blank">
-            <img src="images/logoAMU.png" alt="IEEE Logo" class="ieee-logo" />
+          <div class="v-sep"></div>
+          <a href="https://www.amu.ac.in/" target="_blank" rel="noopener">
+            <img
+              src="https://conference.csd.amu.ac.in/images/logoAMU.png"
+              alt="Aligarh Muslim University"
+              class="amu-logo"
+            />
           </a>
         </div>
       </div>
-     <nav class="menu-bar">
-  <div class="menu-toggle" id="menu-toggle">
-    ☰ MENU
-  </div>
-  <ul id="menu-list">
-    <li><a href="index.html">HOME</a></li>
-    <li><a href="https://amu.ac.in/miscellaneous/iceci-2023">ICECI 2023</a></li>
-    <li><a href="index.html#COMMITTEE">COMMITTEE</a></li>
-    <li><a href="authors.html">AUTHORS</a></li>
-    <li><a href="registration.html">REGISTRATION</a></li>
-    <li><a href="index.html#venue">VENUE/TRAVEL</a></li>
-    <li><a href="index.html#contact">CONTACT US</a></li>
-  </ul>
-</nav>
+
+      <nav class="menu-bar">
+        <ul class="menu-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="https://amu.ac.in/miscellaneous/iceci-2023">ICECI 2023</a></li>
+          <li><a href="index.html#COMMITTEE">Committee</a></li>
+          <li><a href="authors.html">Authors</a></li>
+          <li><a href="registration.html">Registration</a></li>
+          <li><a href="index.html#venue">Venue/Travel</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- Registration Fees Section -->
-    <section class="registration-section">
-      <div class="container content-wrapper">
-        <!-- Left Content -->
-        <div class="main-content-area">
-          <h1>Our Speakers</h1>
-          <main class="content-wrap bios">
+    <section class="hero-wrap">
+      <div class="hero">
+        <div class="hero-badge">ICECI 2026</div>
+        <h1>Invited Speaker Biographies</h1>
+        <p>
+          Profiles of keynote, invited, and industry speakers participating in the
+          2<sup>nd</sup> International Conference on Emerging Computational
+          Intelligence. The page has been aligned with the conference website
+          theme and widened so biography text displays naturally without cramped
+          wrapping.
+        </p>
+      </div>
+    </section>
+
+    <section class="note-wrap">
+      <div class="section-note">
+        Official conference branding, navigation structure, and visual tone are
+        aligned with the ICECI homepage, including the same header hierarchy,
+        blue conference palette, and venue-style clean card presentation.
+      </div>
+    </section>
+
+    <main class="content-wrap bios">
       <article class="bio-card">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYWY_q1188ygKSVwZGXmIsDKd_exIBJaYNjw&s"
@@ -404,44 +818,13 @@
           </p>
         </div>
       </article>
-    </main>          
-        </div>
-      </div>
-    </section>
- <div class="cmt-acknowledgment">
-  <p>
-    <strong>CMT Acknowledgment:</strong> The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
-  </p>
-</div>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container footer-links">
-        <a href="index.html">HOME</a>
-        |
-        <a href="https://www.amu.ac.in/" target="_blank">AMU Website</a>
-        |
-        <a
-          href="https://www.amu.ac.in/department/computer-science"
-          target="_blank"
-        >
-          Department of Computer Science
-        </a>
-        |
-        <a href="https://amu.ac.in/miscellaneous/iceci-2023" target="_blank">
-          ICECI 2023
-        </a>
-        |
-        <a href="https://privacy.ieee.org/policies" target="_blank">
-          IEEE PRIVACY POLICY
-        </a>
-      </div>
-      <div class="footer-text">
-        <p>© Copyright 2026 ICECI - All rights reserved.</p>
-      </div>
-      <a href="#" class="back-to-top">▲ Back to Top</a>
-    </footer>
+    </main>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
-  </body>
+    <div class="footer-wrap">
+      <div class="footer-note">
+        For conference details, schedule, and updates, visit the official ICECI 2026 website.
+      </div>
+    </div>
+  </div>
+</body>
 </html>
