@@ -15,6 +15,23 @@
           <div class="form-group my-2">
             <input required="" class="form-control" type="text" name="AuthEmail" placeholder="Authors Email ID(s)">
           </div>
-          <input type="hidden" name="rtrnurl" value="https://conference.csd.amu.ac.in/registration.html">
-          <input name="Submit" type="submit" class="btn btn-primary" style="border-radius: 0" value="Submit  E-Copyright">
+          <input type="hidden" name="rtrnurl" value="https://conference.csd.amu.ac.in/copyright.html">
+          <input type="hidden" name="ArtDate" id="ArtDate">
+          <input type="submit" class="btn btn-primary" style="border-radius: 0" >
         </form>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const now = new Date();
+
+  // Format: MM/DD/YYYY HH:MM
+  const formatted =
+    String(now.getMonth() + 1).padStart(2, '0') + '/' +
+    String(now.getDate()).padStart(2, '0') + '/' +
+    now.getFullYear() + ' ' +
+    String(now.getHours()).padStart(2, '0') + ':' +
+    String(now.getMinutes()).padStart(2, '0');
+
+  document.getElementById('ArtDate').value = formatted;
+});
+</script>
